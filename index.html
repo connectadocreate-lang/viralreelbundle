@@ -1,987 +1,2521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0f" />
-  <title>Viral Reel Bundle</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: {
-            ink: '#07070A',
-            ink2: '#0B0B12',
-            redx: '#ff0035',
-            red2: '#ff2e55'
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(255,0,53,.25), 0 18px 60px rgba(0,0,0,.55)',
-            card: '0 10px 35px rgba(0,0,0,.55)'
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <title>Viral Reel Bundle - Premium Viral Reel Packs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root{
-      --bg0:#07070a;
-      --bg1:#0b0b12;
-      --r:#ff0035;
-      --r2:#ff2e55;
-      --w:rgba(255,255,255,.92);
-      --wm:rgba(255,255,255,.72);
-      --wl:rgba(255,255,255,.55);
-      --glass:rgba(16,16,25,.45);
-      --stroke:rgba(255,255,255,.08);
+    :root {
+      --bg: #050509;
+      --bg-alt: #0b0b11;
+      --accent: #ff1744;
+      --accent-soft: rgba(255, 23, 68, 0.12);
+      --accent-strong: #ff4c6a;
+      --accent-dark: #b3122f;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --muted-soft: #6b7280;
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.75);
+      --shadow-glow: 0 0 40px rgba(255, 23, 68, 0.5);
+      --transition-fast: 180ms ease-out;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      background:
-        radial-gradient(1200px 800px at 10% 10%, rgba(255,0,53,.18), transparent 55%),
-        radial-gradient(900px 600px at 95% 20%, rgba(255,58,110,.14), transparent 55%),
-        radial-gradient(900px 700px at 75% 95%, rgba(255,0,53,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      color: var(--w);
-      overflow-x:hidden;
+
+    * {
+      box-sizing: border-box;
     }
-    *{scrollbar-color: rgba(255,0,53,.35) rgba(255,255,255,.06);}
-    *::-webkit-scrollbar{height:10px;width:10px;}
-    *::-webkit-scrollbar-thumb{background: rgba(255,0,53,.35); border-radius: 999px; border:2px solid rgba(0,0,0,.25);}
-    *::-webkit-scrollbar-track{background: rgba(255,255,255,.06); border-radius: 999px;}
-    .containerX{max-width:1120px;}
-    .glass{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid var(--stroke);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+
+    html {
+      scroll-behavior: smooth;
     }
-    .glass2{
-      background: rgba(12,12,20,.55);
-      border: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #10101a 0, #050509 45%, #020206 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    .btn{
-      position:relative;
-      border: 1px solid rgba(255,0,53,.32);
-      box-shadow: 0 0 0 1px rgba(255,0,53,.14), 0 16px 50px rgba(0,0,0,.45);
-      background: linear-gradient(135deg, rgba(255,0,53,.95), rgba(255,46,85,.75));
-      transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
-      will-change: transform;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .btn:hover{transform: translateY(-1px); filter: saturate(1.05);}
-    .btn:active{transform: translateY(0px) scale(.99);}
-    .btn::after{
-      content:"";
-      position:absolute; inset:-2px;
-      border-radius: 9999px;
-      background: radial-gradient(300px 120px at 20% 10%, rgba(255,255,255,.35), transparent 55%);
-      opacity:.45;
-      pointer-events:none;
-      mix-blend-mode: overlay;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .btnGhost{
-      border:1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    .btnGhost:hover{transform: translateY(-1px); border-color: rgba(255,0,53,.35);}
-    .muted{color: var(--wm);}
-    .muted2{color: var(--wl);}
-    .ringGlow{
-      box-shadow: 0 0 0 1px rgba(255,0,53,.2), 0 18px 60px rgba(0,0,0,.6);
+
+    section {
+      padding: 4.5rem 0 3.5rem;
+      position: relative;
+      z-index: 1;
     }
-    .gradText{
-      background: linear-gradient(90deg, #fff, rgba(255,255,255,.75), rgba(255,0,53,.95));
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.75rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 15, 20, 0.9);
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-label-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    .section-header h2 {
+      margin: 0.9rem 0 0.4rem;
+      font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+    }
+
+    .section-header p {
+      margin: 0;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 9, 0.94),
+        rgba(5, 5, 9, 0.88),
+        rgba(5, 5, 9, 0.85)
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 0, #ff8a9c 0, #ff1744 35%, #b3122f 100%);
+      box-shadow: var(--shadow-glow);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text {
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: #f3f4f6;
+    }
+
+    .brand-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 0.2rem 0;
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.15rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: #f9fafb;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.nav-cta::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.32rem 0.5rem;
+      color: #fef2f2;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 0.3rem;
+      border-radius: 999px;
+      cursor: pointer;
+      position: relative;
+      width: 38px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-toggle span {
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      transition: transform 0.18s ease-out, opacity 0.18s ease-out, top 0.18s ease-out, bottom 0.18s ease-out;
+    }
+
+    .nav-toggle span:first-child {
+      top: 11px;
+    }
+
+    .nav-toggle span:last-child {
+      bottom: 11px;
+    }
+
+    body.nav-open .nav-toggle span:first-child {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    body.nav-open .nav-toggle span:last-child {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+
+    /* Buttons */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.68rem 1.5rem;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast),
+        box-shadow var(--transition-fast), border-color var(--transition-fast);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #fef2f2;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.4), var(--shadow-glow);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 15, 25, 0.9);
+      color: var(--muted);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(30, 30, 40, 0.95);
+      color: #f9fafb;
+      border-color: rgba(248, 113, 113, 0.4);
+    }
+
+    .btn-pill-light {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 5.2rem 0 4.2rem;
+      min-height: calc(100vh - 70px);
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      filter: blur(70px);
+      opacity: 0.6;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -140px;
+      right: -120px;
+      background: radial-gradient(circle, rgba(255, 23, 68, 0.9), transparent 65%);
+      animation: float 16s ease-in-out infinite;
+    }
+
+    .hero::after {
+      bottom: -160px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.4), transparent 70%);
+      animation: float 20s ease-in-out infinite reverse;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(12, 12, 18, 0.96);
+      border: 1px solid rgba(248, 113, 113, 0.45);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fecaca;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f97373;
+      box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.8);
+      animation: pulse 1.6s infinite;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      line-height: 1.12;
+      margin: 0 0 0.6rem;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(120deg, #fecaca, #fb7185, #f97373);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    .chip{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-    }
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: 18px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      transform: translateZ(0);
-    }
-    .card:hover{
-      border-color: rgba(255,0,53,.28);
-    }
-    .badge{
-      border:1px solid rgba(255,0,53,.35);
-      background: linear-gradient(135deg, rgba(255,0,53,.18), rgba(255,255,255,.05));
-    }
-    .sectionTitle{
-      letter-spacing: -0.02em;
-    }
-    .anchor{scroll-margin-top: 92px;}
-    .gridFade{
-      mask-image: radial-gradient(1800px 700px at 50% 20%, #000 50%, transparent 85%);
-      -webkit-mask-image: radial-gradient(1800px 700px at 50% 20%, #000 50%, transparent 85%);
-    }
-    .bgGrid{
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 44px 44px;
-      opacity: .35;
-      filter: drop-shadow(0 0 20px rgba(255,0,53,.12));
+
+    .hero-subtitle {
+      margin: 0 0 1.7rem;
+      color: var(--muted);
+      font-size: 0.99rem;
+      max-width: 32rem;
     }
 
-    /* Motion elements */
-    .orb{
-      position:absolute;
-      border-radius:9999px;
-      filter: blur(18px);
-      opacity:.65;
-      pointer-events:none;
-      mix-blend-mode: screen;
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-cta-note {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .hero-cta-note span.icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #6ee7b7;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-stat {
+      min-width: 100px;
+    }
+
+    .hero-stat-value {
+      display: block;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .hero-stat-label {
+      color: var(--muted-soft);
+    }
+
+    .hero-bundles-panel {
+      background: radial-gradient(circle at top left, rgba(239, 68, 68, 0.18), transparent 60%), rgba(10, 10, 17, 0.96);
+      border-radius: 24px;
+      padding: 1.5rem 1.4rem 1.5rem;
+      border: 1px solid rgba(248, 113, 113, 0.22);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bundles-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.08), transparent 55%);
+      opacity: 0.5;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .hero-bundles-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-bundles-header h2 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(3, 7, 18, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+      animation: pulse-green 1.7s infinite;
+    }
+
+    .hero-bundles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .mini-bundle-card {
+      position: relative;
+      border-radius: 16px;
+      background: rgba(12, 12, 19, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 0.75rem 0.75rem 0.85rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.4rem;
+      transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast),
+        background 180ms ease-out;
+    }
+
+    .mini-bundle-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.2), transparent 55%);
+      transition: opacity 200ms ease-out;
+      pointer-events: none;
+    }
+
+    .mini-bundle-card:hover {
+      border-color: rgba(248, 113, 113, 0.75);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.75);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
+    }
+
+    .mini-bundle-card:hover::before {
+      opacity: 1;
+    }
+
+    .mini-bundle-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.35rem;
+    }
+
+    .mini-badge {
+      font-size: 0.68rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(248, 113, 113, 0.6);
+      color: #fecaca;
+      background: rgba(127, 29, 29, 0.5);
+    }
+
+    .mini-price {
+      font-size: 0.72rem;
+      color: var(--muted-soft);
+    }
+
+    .mini-price strong {
+      color: #fee2e2;
+      font-size: 0.82rem;
+    }
+
+    .mini-title {
+      font-size: 0.84rem;
+      font-weight: 500;
+      margin-top: 0.22rem;
+    }
+
+    .mini-meta {
+      font-size: 0.7rem;
+      color: var(--muted-soft);
+    }
+
+    .mini-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .mini-chip {
+      font-size: 0.7rem;
+      color: rgba(248, 250, 252, 0.85);
+      padding: 0.12rem 0.5rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .mini-buy {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #fef2f2;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .mini-buy:hover {
+      filter: brightness(1.05);
+    }
+
+    .mini-buy-icon {
+      font-size: 0.78rem;
+    }
+
+    .hero-note {
+      margin-top: 0.9rem;
+      font-size: 0.76rem;
+      color: var(--muted-soft);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-note-pill {
+      padding: 0.08rem 0.55rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    /* Moving ticker */
+
+    .section-ticker {
+      padding: 0.4rem 0;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      background: radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.09), transparent 55%), #020208;
+      overflow: hidden;
+    }
+
+    .ticker-inner {
+      position: relative;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 2.4rem;
+      white-space: nowrap;
       will-change: transform;
-    }
-    .orb1{
-      width: 220px; height: 220px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), rgba(255,0,53,.9) 40%, transparent 70%);
-      animation: float1 10s ease-in-out infinite;
-      left: -60px; top: 80px;
-    }
-    .orb2{
-      width: 280px; height: 280px;
-      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.35), rgba(255,46,85,.75) 38%, transparent 72%);
-      animation: float2 12s ease-in-out infinite;
-      right: -90px; top: 160px;
-    }
-    .orb3{
-      width: 240px; height: 240px;
-      background: radial-gradient(circle at 30% 35%, rgba(255,255,255,.25), rgba(255,0,53,.55) 45%, transparent 74%);
-      animation: float3 14s ease-in-out infinite;
-      left: 18%; bottom: -110px;
-      opacity: .5;
-    }
-    @keyframes float1{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(20px,22px) scale(1.03);}}
-    @keyframes float2{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(-18px,26px) scale(1.04);}}
-    @keyframes float3{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(22px,-18px) scale(1.02);}}
-
-    .marquee{
-      overflow:hidden;
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-    }
-    .marqueeTrack{
-      display:flex;
-      gap: 14px;
-      width:max-content;
-      padding: 12px 0;
-      animation: marquee 22s linear infinite;
-      will-change: transform;
-    }
-    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-    @media (prefers-reduced-motion: reduce){
-      .marqueeTrack{animation:none;}
-      .orb{animation:none;}
-      .reveal{transition:none !important; transform:none !important; opacity:1 !important;}
+      animation: ticker 32s linear infinite;
+      font-size: 0.75rem;
+      color: #e5e7eb;
     }
 
-    /* Reveal on scroll */
-    .reveal{opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease;}
-    .reveal.show{opacity:1; transform: translateY(0);}
-
-    /* Subtle shine */
-    .shine{
-      position:relative;
-      overflow:hidden;
-    }
-    .shine::before{
-      content:"";
-      position:absolute;
-      top:-40%;
-      left:-60%;
-      width: 70%;
-      height: 180%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
-      transform: rotate(18deg);
-      animation: shine 4.8s ease-in-out infinite;
-      pointer-events:none;
-      opacity:.8;
-    }
-    @keyframes shine{
-      0%{transform: translateX(-40%) rotate(18deg); opacity:0;}
-      15%{opacity:.55;}
-      40%{opacity:0;}
-      100%{transform: translateX(240%) rotate(18deg); opacity:0;}
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.85;
     }
 
-    /* Focus styles */
-    a:focus-visible, button:focus-visible {outline: 2px solid rgba(255,0,53,.7); outline-offset: 3px; border-radius: 12px;}
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
-    .skip:focus{left:14px;top:14px;width:auto;height:auto;z-index:1000;padding:10px 12px;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:12px;}
+    .ticker-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(248, 250, 252, 0.65);
+    }
+
+    .ticker-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      color: #fecaca;
+    }
+
+    /* Bundles grid */
+
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .bundle-card {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.3rem 1.2rem 1.25rem;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: border-color var(--transition-fast), transform var(--transition-fast),
+        box-shadow var(--transition-fast), background 200ms ease-out;
+    }
+
+    .bundle-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(248, 113, 113, 0.15), transparent 55%);
+      opacity: 0;
+      transition: opacity 200ms ease-out;
+      pointer-events: none;
+    }
+
+    .bundle-card:hover {
+      border-color: rgba(248, 113, 113, 0.7);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 0.98));
+    }
+
+    .bundle-card:hover::before {
+      opacity: 1;
+    }
+
+    .bundle-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(127, 29, 29, 0.28);
+      border: 1px solid rgba(248, 113, 113, 0.6);
+      color: #fecaca;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: fit-content;
+    }
+
+    .badge-top {
+      background: radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.6), rgba(127, 29, 29, 0.8));
+      border-color: rgba(252, 165, 165, 0.85);
+      box-shadow: var(--shadow-glow);
+      color: #fef9c3;
+    }
+
+    .bundle-title {
+      margin: 0.32rem 0 0.15rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .bundle-meta {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .bundle-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #fee2e2;
+    }
+
+    .old-price {
+      color: #9ca3af;
+      text-decoration: line-through;
+      font-size: 0.78rem;
+    }
+
+    .bundle-tagline {
+      font-size: 0.75rem;
+      color: #f97373;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .bundle-features {
+      list-style: none;
+      margin: 0.4rem 0 0.6rem;
+      padding: 0;
+      font-size: 0.8rem;
+      color: var(--muted-soft);
+    }
+
+    .bundle-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.18rem;
+    }
+
+    .bullet-check {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: #bbf7d0;
+      background: rgba(15, 23, 42, 0.9);
+      flex-shrink: 0;
+    }
+
+    .bundle-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: auto;
+      padding-top: 0.35rem;
+      border-top: 1px dashed rgba(55, 65, 81, 0.9);
+    }
+
+    .bundle-footer-note {
+      font-size: 0.75rem;
+      color: var(--muted-soft);
+    }
+
+    .bundle-footer-note strong {
+      color: #fee2e2;
+    }
+
+    .btn-bundle-buy {
+      font-size: 0.8rem;
+      padding-inline: 0.9rem;
+    }
+
+    /* Top seller */
+
+    .top-seller-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .top-seller-card {
+      position: relative;
+      padding: 1.3rem 1.2rem 1.2rem;
+      border-radius: 20px;
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.18), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(248, 113, 113, 0.6);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      overflow: hidden;
+    }
+
+    .top-seller-ribbon {
+      position: absolute;
+      top: 0.8rem;
+      right: -3rem;
+      transform: rotate(35deg);
+      background: linear-gradient(120deg, #facc15, #f97316);
+      color: #111827;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 2.8rem;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.9);
+      letter-spacing: 0.12em;
+    }
+
+    .top-seller-card h3 {
+      margin: 0.4rem 0 0.15rem;
+      font-size: 1.02rem;
+    }
+
+    .top-seller-meta {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .top-seller-metric-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .metric-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.16rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(252, 165, 165, 0.8);
+      color: #fee2e2;
+    }
+
+    .metric-highlight span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse-green 1.6s infinite;
+    }
+
+    .top-seller-price {
+      text-align: right;
+      font-size: 0.85rem;
+    }
+
+    .top-seller-price strong {
+      color: #fee2e2;
+      font-size: 1rem;
+    }
+
+    .top-seller-actions {
+      margin-top: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .top-seller-note {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+    }
+
+    /* About */
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .about-card {
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.15), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% -20%, rgba(248, 250, 252, 0.1), transparent 55%);
+      opacity: 0.7;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .about-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+    }
+
+    .about-card p {
+      margin: 0 0 0.9rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      color: var(--muted-soft);
+    }
+
+    .about-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.1);
+      border: 1px solid rgba(22, 163, 74, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #bbf7d0;
+      flex-shrink: 0;
+      margin-top: 0.08rem;
+    }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+    }
+
+    .about-pill {
+      padding: 0.18rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: #e5e7eb;
+    }
+
+    .about-highlight {
+      border-radius: 24px;
+      border: 1px dashed rgba(248, 113, 113, 0.6);
+      padding: 1.4rem 1.3rem;
+      background: radial-gradient(circle at top right, rgba(248, 113, 113, 0.12), rgba(15, 23, 42, 0.95));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-highlight-title {
+      font-size: 1.02rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .about-highlight p {
+      margin: 0 0 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about-highlight-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0.8rem;
+      font-size: 0.84rem;
+      color: var(--muted-soft);
+    }
+
+    .about-highlight-list li {
+      display: flex;
+      gap: 0.35rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .about-highlight-list span.bullet {
+      color: #fb7185;
+    }
+
+    /* Testimonials */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .testimonial-card {
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 1.2rem 1.2rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.65);
+    }
+
+    .testimonial-quote-mark {
+      position: absolute;
+      top: -6px;
+      right: 12px;
+      font-size: 3.2rem;
+      color: rgba(55, 65, 81, 0.35);
+    }
+
+    .testimonial-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      font-size: 0.72rem;
+      color: #fed7aa;
+      margin-bottom: 0.35rem;
+    }
+
+    .star {
+      color: #facc15;
+      font-size: 0.85rem;
+    }
+
+    .testimonial-text {
+      margin: 0.3rem 0 0.7rem;
+      font-size: 0.88rem;
+      color: #e5e7eb;
+    }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+    }
+
+    .testimonial-role {
+      color: var(--muted-soft);
+    }
+
+    .testimonial-tag {
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(31, 41, 55, 0.9);
+      color: #c4b5fd;
+      font-size: 0.7rem;
+    }
+
+    /* Buy / CTA */
+
+    .buy-section {
+      padding-bottom: 4.5rem;
+    }
+
+    .buy-card {
+      max-width: 880px;
+      margin: 0 auto;
+      border-radius: 26px;
+      background: radial-gradient(circle at top, rgba(248, 113, 113, 0.3), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(248, 113, 113, 0.7);
+      box-shadow: var(--shadow-soft);
+      padding: 1.9rem 1.7rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buy-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.12), transparent 55%);
+      opacity: 0.85;
+      mix-blend-mode: soft-light;
+      pointer-events: none;
+    }
+
+    .buy-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .buy-card-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .buy-card-subtitle {
+      margin: 0 0 1.1rem;
+      font-size: 0.95rem;
+      color: #fee2e2;
+      max-width: 520px;
+    }
+
+    .buy-card-highlight {
+      font-weight: 600;
+      color: #f97373;
+    }
+
+    .buy-card-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .buy-price-info {
+      font-size: 0.9rem;
+      color: #fee2e2;
+    }
+
+    .buy-price-info .old {
+      text-decoration: line-through;
+      color: #fecaca;
+      opacity: 0.85;
+    }
+
+    .buy-price-info .now {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-left: 0.4rem;
+    }
+
+    .buy-guarantee {
+      font-size: 0.8rem;
+      color: #fef9c3;
+      margin-top: 0.25rem;
+    }
+
+    .buy-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .buy-whatsapp-btn {
+      padding-inline: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-icon {
+      font-size: 1rem;
+    }
+
+    .buy-note {
+      font-size: 0.8rem;
+      color: #fee2e2;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 2.2rem 0 2.4rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020205);
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+
+    .footer-brand p {
+      margin: 0.2rem 0 0.4rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-nav-group {
+      min-width: 120px;
+    }
+
+    .footer-nav-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-nav-links a {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-nav-links a:hover {
+      color: #fef2f2;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Reveal animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    /* Keyframes */
+
+    @keyframes float {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      50% {
+        transform: translate3d(16px, -14px, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.8);
+      }
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(248, 113, 113, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 113, 113, 0);
+      }
+    }
+
+    @keyframes pulse-green {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.85);
+      }
+      65% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 9px rgba(34, 197, 94, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
+        gap: 2.2rem;
+      }
+
+      .about-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .buy-card {
+        padding-inline: 1.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        padding-inline: 1.1rem;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 0.5rem;
+        padding: 0.75rem 1.2rem 0.9rem;
+        background: rgba(6, 6, 12, 0.98);
+        border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+        border-top: 1px solid rgba(31, 41, 55, 0.9);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+        display: none;
+      }
+
+      body.nav-open .nav-links {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-bundles-panel {
+        order: -1;
+      }
+
+      .hero-bundles-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-stats {
+        gap: 1rem;
+      }
+
+      section {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .section-header {
+        text-align: left;
+      }
+
+      .section-header p {
+        margin-left: 0;
+      }
+
+      .buy-card-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .buy-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-bundles-panel {
+        padding: 1.2rem 1.1rem 1.25rem;
+      }
+
+      .bundle-card,
+      .top-seller-card,
+      .about-card,
+      .about-highlight,
+      .testimonial-card {
+        padding-inline: 1.05rem;
+      }
+
+      .buy-card {
+        padding-inline: 1.05rem;
+      }
+
+      .ticker-track {
+        animation-duration: 40s;
+      }
+    }
   </style>
 </head>
-<body class="font-sans">
-  <a class="skip" href="#home">Skip to content</a>
-
-  <!-- Sticky Header -->
-  <header class="fixed top-0 left-0 right-0 z-50">
-    <div class="mx-auto containerX px-4 sm:px-6">
-      <div class="mt-3 glass rounded-2xl">
-        <div class="flex items-center justify-between px-4 sm:px-5 py-3">
-          <a href="#home" class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-2xl ringGlow grid place-items-center bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.22),rgba(255,0,53,.55)_45%,rgba(0,0,0,.25)_90%)]">
-              <span class="text-white font-black tracking-tight">VR</span>
-            </div>
-            <div class="leading-tight">
-              <div class="font-extrabold tracking-tight text-white">Viral Reel Bundle</div>
-              <div class="text-xs muted2">Ready-to-post • No watermark • No editing</div>
-            </div>
-          </a>
-
-          <nav class="hidden md:flex items-center gap-1">
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#bundles">Bundles</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#about">About</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#top">Top Seller</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#testimonials">Testimonials</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#buy">Buy</a>
-          </nav>
-
-          <div class="flex items-center gap-2">
-            <a id="headerBuy" href="#buy" class="hidden sm:inline-flex btn rounded-full px-4 py-2 text-sm font-semibold text-white shine">
-              Buy on WhatsApp
-            </a>
-            <button id="mobileMenuBtn" class="md:hidden btnGhost rounded-xl px-3 py-2 text-sm font-semibold text-white/90">
-              Menu
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 px-3 py-3">
-          <div class="grid gap-1">
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#bundles">Bundles</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#about">About</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#top">Top Seller</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#testimonials">Testimonials</a>
-            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#buy">Buy</a>
-          </div>
-          <div class="mt-3 flex gap-2">
-            <a href="#buy" class="flex-1 btn rounded-xl px-4 py-2 text-sm font-semibold text-white text-center">Buy on WhatsApp</a>
-            <a href="#bundles" class="flex-1 btnGhost rounded-xl px-4 py-2 text-sm font-semibold text-white/90 text-center">View Bundles</a>
-          </div>
-        </div>
-      </div>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">VRB</span>
+        <span class="brand-text">Viral <span>Reel Bundle</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#top-seller">Top Seller</a>
+        <a href="#about">About Product</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#buy" class="nav-cta">Buy Now</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="home" class="pt-[100px] sm:pt-[110px]">
-    <section class="relative">
-      <div class="orb orb1"></div>
-      <div class="orb orb2"></div>
-      <div class="orb orb3"></div>
-
-      <div class="absolute inset-0 gridFade pointer-events-none">
-        <div class="bgGrid absolute inset-0"></div>
-      </div>
-
-      <div class="mx-auto containerX px-4 sm:px-6">
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center py-10 sm:py-14">
-          <div class="reveal">
-            <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1.5 text-xs font-semibold text-white/85">
-              <span class="h-2 w-2 rounded-full bg-[rgba(255,0,53,.95)] shadow-[0_0_0_4px_rgba(255,0,53,.18)]"></span>
-              Fast growth content packs for creators & businesses
-            </div>
-
-            <h1 class="mt-4 text-3xl sm:text-5xl font-black tracking-tight leading-[1.05]">
-              Sell more, grow faster with <span class="gradText">ready-to-post Reel Bundles</span>
-            </h1>
-
-            <p class="mt-4 text-base sm:text-lg muted leading-relaxed">
-              High-quality reels organized by niche. No editing needed, no watermark, and ready to post instantly.
-              Perfect for Instagram, Facebook, YouTube Shorts, and creator pages.
-            </p>
-
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <a id="heroCta" class="btn rounded-2xl px-5 py-3 text-sm sm:text-base font-bold text-white text-center shine" href="#buy">
-                Buy via WhatsApp (+8433415139)
-              </a>
-              <a class="btnGhost rounded-2xl px-5 py-3 text-sm sm:text-base font-semibold text-white/90 text-center" href="#bundles">
-                Explore bundles
-              </a>
-            </div>
-
-            <div class="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
-              <div class="card px-3 py-3 rounded-2xl">
-                <div class="text-sm font-extrabold text-white">No Watermark</div>
-                <div class="text-xs muted2 mt-1">Clean, professional uploads</div>
-              </div>
-              <div class="card px-3 py-3 rounded-2xl">
-                <div class="text-sm font-extrabold text-white">Ready to Post</div>
-                <div class="text-xs muted2 mt-1">No editing needed</div>
-              </div>
-              <div class="card px-3 py-3 rounded-2xl">
-                <div class="text-sm font-extrabold text-white">Instant Delivery</div>
-                <div class="text-xs muted2 mt-1">Fast WhatsApp support</div>
-              </div>
-            </div>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="hero-dot-live"></span>
+            Viral Reel Bundle
+            <span style="opacity:0.8;">Instant WhatsApp Delivery</span>
           </div>
-
-          <div class="reveal">
-            <div class="card rounded-3xl p-4 sm:p-6 glass2 ringGlow relative overflow-hidden">
-              <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.28),rgba(255,0,53,.7)_38%,transparent_72%)] blur-2xl opacity-80"></div>
-              <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.18),rgba(255,46,85,.55)_40%,transparent_72%)] blur-2xl opacity-70"></div>
-
-              <div class="flex items-center justify-between gap-4">
-                <div>
-                  <div class="text-sm font-semibold muted">Your dashboard</div>
-                  <div class="text-xl sm:text-2xl font-black tracking-tight text-white">Pick a niche. Post daily. Go viral.</div>
-                </div>
-                <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">Black + Red Theme</div>
-              </div>
-
-              <div class="mt-5 grid gap-3">
-                <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
-                  <div class="flex items-start justify-between gap-3">
-                    <div>
-                      <div class="text-sm font-extrabold text-white">Trending Formats Included</div>
-                      <div class="text-xs muted2 mt-1">Cinematic • Aesthetic • Loop • POV • Satisfying</div>
-                    </div>
-                    <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">
-                      <span class="text-white font-black">★</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-3">
-                  <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
-                    <div class="text-xs muted2">Quality</div>
-                    <div class="text-sm font-extrabold text-white mt-1">HD / High Bitrate</div>
-                    <div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div class="h-full w-[86%] bg-[linear-gradient(90deg,rgba(255,0,53,.95),rgba(255,255,255,.18))]"></div>
-                    </div>
-                  </div>
-                  <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
-                    <div class="text-xs muted2">Effort</div>
-                    <div class="text-sm font-extrabold text-white mt-1">Zero Editing</div>
-                    <div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div class="h-full w-[96%] bg-[linear-gradient(90deg,rgba(255,0,53,.85),rgba(255,255,255,.18))]"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <div class="text-xs muted2">Delivery</div>
-                      <div class="text-sm font-extrabold text-white mt-1">Via WhatsApp (+8433415139)</div>
-                    </div>
-                    <a class="btn rounded-xl px-4 py-2 text-xs font-bold text-white whitespace-nowrap" href="#buy">Get now</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-5 text-xs muted2">
-                Tip: Post 2–3 reels/day consistently for faster reach.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Marquee -->
-      <div class="marquee mt-2">
-        <div class="mx-auto containerX px-4 sm:px-6">
-          <div class="marqueeTrack" id="marqueeTrack">
-            <!-- duplicated via JS for seamless loop -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bundles (show 6) -->
-    <section id="bundles" class="anchor mx-auto containerX px-4 sm:px-6 py-12 sm:py-14">
-      <div class="flex items-end justify-between gap-6 reveal">
-        <div>
-          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Bundle Packages</h2>
-          <p class="mt-2 muted">Pick a niche bundle and start posting immediately. Reels are ready to post, without watermark.</p>
-        </div>
-        <a class="hidden sm:inline-flex btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" href="#buy">Buy / Contact</a>
-      </div>
-
-      <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" id="bundleGrid"></div>
-
-      <div class="mt-6 reveal">
-        <div class="card rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <div class="text-sm font-extrabold text-white">Want more Reel Bundles?</div>
-            <div class="text-sm muted mt-1">Contact us on WhatsApp for more reel bundle options and custom deals.</div>
-          </div>
-          <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="more">
-            Contact on WhatsApp
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
-      <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 items-start">
-        <div class="reveal">
-          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">About the Product</h2>
-          <p class="mt-3 muted leading-relaxed">
-            Viral Reel Bundle is a curated library of niche reels you can post instantly.
-            Each bundle is organized for consistent publishing without spending hours on editing.
+          <h1 class="hero-title">
+            <span class="accent">15,000+ viral-ready reels</span> for Instagram, YouTube & Shorts.
+          </h1>
+          <p class="hero-subtitle">
+            Done-for-you vertical reel bundles in HD quality for pages, brands and creators. Just download,
+            post and watch your reach, saves and followers grow on autopilot.
           </p>
-
-          <div class="mt-5 grid gap-3">
-            <div class="card rounded-2xl p-4">
-              <div class="flex items-start gap-3">
-                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
-                <div>
-                  <div class="font-extrabold text-white text-sm">Ready to Post</div>
-                  <div class="text-sm muted2 mt-1">Just download and upload. No editing required.</div>
-                </div>
-              </div>
+          <div class="hero-cta-row">
+            <a href="#" class="btn btn-primary btn-buy" data-whatsapp-product="Full Viral Reel Bundle - All Packs">
+              <span>Buy Full Mega Bundle on WhatsApp</span>
+              <span class="whatsapp-icon">💬</span>
+            </a>
+            <a href="#bundles" class="btn btn-ghost">View all bundle categories</a>
+          </div>
+          <div class="hero-cta-note">
+            <span class="icon">✓</span>
+            <span>Original HD reels • Lifetime access • Ready-to-post formats</span>
+          </div>
+          <div class="hero-stats" style="margin-top:1.4rem;">
+            <div class="hero-stat">
+              <span class="hero-stat-value">15K+ </span>
+              <span class="hero-stat-label">Professionally edited reels</span>
             </div>
-            <div class="card rounded-2xl p-4">
-              <div class="flex items-start gap-3">
-                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
-                <div>
-                  <div class="font-extrabold text-white text-sm">No Watermark</div>
-                  <div class="text-sm muted2 mt-1">Clean visuals for brands, creators, and pages.</div>
-                </div>
-              </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">10+ </span>
+              <span class="hero-stat-label">Niches covered (space, nature, gym, art & more)</span>
             </div>
-            <div class="card rounded-2xl p-4">
-              <div class="flex items-start gap-3">
-                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
-                <div>
-                  <div class="font-extrabold text-white text-sm">Fast Support</div>
-                  <div class="text-sm muted2 mt-1">Buy and receive details quickly via WhatsApp.</div>
-                </div>
-              </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">0 Watermark</span>
+              <span class="hero-stat-label">Use on any page or client project</span>
             </div>
           </div>
         </div>
 
-        <div class="reveal">
-          <div class="card rounded-3xl p-5 sm:p-6 glass2 ringGlow">
-            <div class="flex items-center justify-between gap-3">
-              <div>
-                <div class="text-sm font-semibold muted">How it works</div>
-                <div class="text-xl font-black tracking-tight text-white">3 steps to start posting today</div>
-              </div>
-              <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">Simple</div>
-            </div>
-
-            <div class="mt-5 grid gap-3">
-              <div class="card rounded-2xl p-4">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">1</div>
-                    <div>
-                      <div class="text-sm font-extrabold">Choose Bundle</div>
-                      <div class="text-xs muted2 mt-1">Pick your niche package</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card rounded-2xl p-4">
-                <div class="flex items-center gap-3">
-                  <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">2</div>
-                  <div>
-                    <div class="text-sm font-extrabold">Message on WhatsApp</div>
-                    <div class="text-xs muted2 mt-1">Auto-filled product message</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card rounded-2xl p-4">
-                <div class="flex items-center gap-3">
-                  <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">3</div>
-                  <div>
-                    <div class="text-sm font-extrabold">Receive & Post</div>
-                    <div class="text-xs muted2 mt-1">Start posting immediately</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-5 flex flex-col sm:flex-row gap-3">
-              <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="general">
-                Chat on WhatsApp
-              </button>
-              <a class="btnGhost rounded-2xl px-5 py-3 text-sm font-semibold text-white/90 text-center" href="#bundles">
-                See available bundles
-              </a>
-            </div>
+        <aside class="hero-bundles-panel">
+          <div class="hero-bundles-header">
+            <h2>Featured Reel Bundles</h2>
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Instant WhatsApp link after order
+            </span>
           </div>
+          <div class="hero-bundles-grid">
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">Top Seller</span>
+                <span class="mini-price">
+                  <strong>₹199</strong> <span style="text-decoration:line-through;opacity:.7;">₹599</span>
+                </span>
+              </div>
+              <h3 class="mini-title">1000+ Universe Space Content Reels</h3>
+              <p class="mini-meta">Perfect for mystery, space facts, sci‑fi & aesthetic pages.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Engagement boost guaranteed</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="1000+ Universe Space Content Reels">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">Most Loved</span>
+                <span class="mini-price">
+                  <strong>₹199</strong> <span style="text-decoration:line-through;opacity:.7;">₹599</span>
+                </span>
+              </div>
+              <h3 class="mini-title">1000+ Nature HD Reels</h3>
+              <p class="mini-meta">Slow‑motion, cinematic & relaxing nature reels in full HD.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Great for travel & quotes</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="1000+ Nature HD Reels">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">Hot</span>
+                <span class="mini-price">
+                  <strong>₹249</strong> <span style="text-decoration:line-through;opacity:.7;">₹799</span>
+                </span>
+              </div>
+              <h3 class="mini-title">2200+ Gym Fitness Reels</h3>
+              <p class="mini-meta">Workout, transformation, motivation & training clips.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Perfect for fitness brands</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="2200+ Gym Fitness Reels">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">Creator Fav</span>
+                <span class="mini-price">
+                  <strong>₹299</strong> <span style="text-decoration:line-through;opacity:.7;">₹899</span>
+                </span>
+              </div>
+              <h3 class="mini-title">9000+ Art & Craft Reels</h3>
+              <p class="mini-meta">DIY, painting, drawing, clay, handmade & craft reels.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Huge content library</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">New</span>
+                <span class="mini-price">
+                  <strong>₹199</strong> <span style="text-decoration:line-through;opacity:.7;">₹599</span>
+                </span>
+              </div>
+              <h3 class="mini-title">9000+ Art & Craft Reels 1</h3>
+              <p class="mini-meta">Beginner friendly craft tutorials & step‑by‑step reels.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Perfect for DIY pages</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 1">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+
+            <article class="mini-bundle-card">
+              <div class="mini-bundle-topline">
+                <span class="mini-badge">New</span>
+                <span class="mini-price">
+                  <strong>₹199</strong> <span style="text-decoration:line-through;opacity:.7;">₹599</span>
+                </span>
+              </div>
+              <h3 class="mini-title">9000+ Art & Craft Reels 2</h3>
+              <p class="mini-meta">Advanced crafts, speed arts, transitions & more.</p>
+              <div class="mini-actions">
+                <span class="mini-chip">Great for artists</span>
+                <button class="mini-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 2">
+                  <span class="mini-buy-icon">⚡</span> Buy
+                </button>
+              </div>
+            </article>
+          </div>
+          <p class="hero-note">
+            <span class="hero-note-pill">Full access on WhatsApp</span>
+            Get download links + bundle previews directly in your WhatsApp chat after you place the order.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Moving ticker -->
+    <section class="section-ticker" aria-hidden="true">
+      <div class="container ticker-inner">
+        <div class="ticker-track">
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 1000+ Universe Space Content Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 1000+ Nature HD Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 2200+ Gym Fitness Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 1
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 2
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 3
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 4
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 5
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 9000+ Art & Craft Reels 6
+            <span class="ticker-dot"></span>
+          </span>
+
+          <!-- duplicated for smooth loop -->
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 1000+ Universe Space Content Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 1000+ Nature HD Reels
+            <span class="ticker-dot"></span>
+          </span>
+          <span class="ticker-item">
+            <span class="ticker-label">Bundle</span> 2200+ Gym Fitness Reels
+            <span class="ticker-dot"></span>
+          </span>
         </div>
       </div>
     </section>
 
-    <!-- Top Seller -->
-    <section id="top" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
-      <div class="reveal flex items-end justify-between gap-6">
-        <div>
-          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Top Seller</h2>
-          <p class="mt-2 muted">Our most requested bundle—fastest niche to scale for many pages.</p>
-        </div>
-        <div class="hidden sm:block badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">
-          Bestseller
+    <!-- Bundles section -->
+    <section id="bundles">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">
+            <span class="section-label-dot"></span>
+            Reel Bundle Collection
+          </span>
+          <h2>Choose your Viral Reel Bundle niche</h2>
+          <p>
+            Get niche‑specific reels in HD. You can buy single bundles or grab the full <strong>Viral Reel Bundle</strong> and dominate every niche.
+          </p>
+        </header>
+
+        <div class="bundle-grid">
+          <article class="bundle-card reveal">
+            <span class="bundle-badge badge-top">Best Seller</span>
+            <h3 class="bundle-title">1000+ Universe Space Content Reels</h3>
+            <p class="bundle-meta">
+              Space facts, galaxy animations, nebula timelapses & cosmic aesthetics designed for hooks and storytelling.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Perfect for fact, motivation & mystery pages</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Hook‑based intros ideal for viral hooks
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                HD vertical format – ready for Reels, Shorts & TikTok
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                No watermark – use with your own branding
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Instant WhatsApp download</strong><br />
+                Links sent in seconds after you message.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="1000+ Universe Space Content Reels">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Trending</span>
+            <h3 class="bundle-title">1000+ Nature HD Reels</h3>
+            <p class="bundle-meta">
+              Cinematic waterfalls, forests, beaches & timelapses for quotes, travel pages and relaxation reels.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Ideal for travel, quotes & lifestyle brands</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                4K & 1080p footage with perfect loop points
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Great for overlaying music or voiceover hooks
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Use for client work with full rights
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Save hours</strong><br />
+                No need to shoot or edit nature B‑roll again.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="1000+ Nature HD Reels">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Hot Niche</span>
+            <h3 class="bundle-title">2200+ Gym Fitness Reels</h3>
+            <p class="bundle-meta">
+              Workout clips, transformations, training angles & gym aesthetics for daily fitness content.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹249</span>
+              <span class="old-price">₹799</span>
+            </div>
+            <div class="bundle-tagline">Made for trainers, gyms & fitness pages</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Workout splits, motivational edits & transitions
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Ideal for before/after & transformation posts
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                High retention angles & pacing
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Fill your content calendar</strong><br />
+                Months of daily reels ready to go.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="2200+ Gym Fitness Reels">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Mega Pack</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels</h3>
+            <p class="bundle-meta">
+              Huge collection of DIY, painting, drawing, resin, clay and craft reels to build endless creativity pages.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹299</span>
+              <span class="old-price">₹999</span>
+            </div>
+            <div class="bundle-tagline">Perfect for art & DIY influencers</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Step‑by‑step tutorials & satisfying reels
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Great for ASMR, craft, art & kids pages
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Organized by category for easy posting
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Craft viral content fast</strong><br />
+                Just add text, sound & upload.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 1</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 1</h3>
+            <p class="bundle-meta">
+              Beginner‑friendly reels with simple crafts, school projects and home DIY ideas.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Easy, viral & share‑worthy content</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                High watch time satisfying reels
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Perfect for family & kids DIY pages
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Ready to monetize</strong><br />
+                Use on brand collab pages.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 1">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 2</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 2</h3>
+            <p class="bundle-meta">
+              Intermediate reels: detailed paintings, sketches, lettering, calligraphy & décor.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Ideal for art pages & tutorials</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Close‑up shots, progress & reveals
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Great for mixing with trending sounds
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Consistent aesthetics</strong><br />
+                Same vibe across all reels.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 2">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 3</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 3</h3>
+            <p class="bundle-meta">
+              Advanced art pieces, time‑lapses & pro‑level crafts for premium‑looking content.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">For serious art creators & agencies</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Perfect for brand collab campaigns
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Includes detailed process reels
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Stand out</strong><br />
+                Premium visuals that look like studio work.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 3">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 4</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 4</h3>
+            <p class="bundle-meta">
+              Mixed crafts, DIY décor, handmade gifts & seasonal creative reels.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Perfect for festive & seasonal posts</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Ready for reels, shorts & status
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Perfect to pair with trending audios
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Drive saves</strong><br />
+                Highly shareable DIY ideas.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 4">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 5</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 5</h3>
+            <p class="bundle-meta">
+              Hyper‑satisfying cutting, pouring, mixing and ASMR‑style craft content.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Ultimate satisfying reels pack</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Designed for retention & looping
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Perfect for relax & ASMR pages
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Boost watch time</strong><br />
+                Content that people rewatch again & again.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 5">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="bundle-card reveal">
+            <span class="bundle-badge">Volume 6</span>
+            <h3 class="bundle-title">9000+ Art & Craft Reels 6</h3>
+            <p class="bundle-meta">
+              Final expansion pack with mixed reels to keep your page active for months.
+            </p>
+            <div class="bundle-pricing">
+              <span class="price">₹199</span>
+              <span class="old-price">₹599</span>
+            </div>
+            <div class="bundle-tagline">Never run out of creative content</div>
+            <ul class="bundle-features">
+              <li>
+                <span class="bullet-check">✓</span>
+                Extra variety & fresh ideas daily
+              </li>
+              <li>
+                <span class="bullet-check">✓</span>
+                Works for any language or market
+              </li>
+            </ul>
+            <div class="bundle-footer">
+              <div class="bundle-footer-note">
+                <strong>Post daily</strong><br />
+                Mix with the other volumes for endless content.
+              </div>
+              <a href="#" class="btn btn-primary btn-bundle-buy btn-buy" data-whatsapp-product="9000+ Art & Craft Reels 6">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="mt-7 grid lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
-        <div class="reveal lg:col-span-2">
-          <div class="card rounded-3xl p-5 sm:p-7 glass2 ringGlow relative overflow-hidden">
-            <div class="absolute inset-0 pointer-events-none" style="background:
-              radial-gradient(900px 320px at 20% 20%, rgba(255,0,53,.18), transparent 55%),
-              radial-gradient(600px 260px at 85% 25%, rgba(255,46,85,.12), transparent 60%);
-              opacity:.9;"></div>
+    <!-- Top seller section -->
+    <section id="top-seller">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">
+            <span class="section-label-dot"></span>
+            Top Seller Bundles
+          </span>
+          <h2>Most profitable reels for fast growth</h2>
+          <p>
+            These are the <strong>best‑performing bundles</strong> loved by our buyers. Start with any of them or grab all three with the full Viral Reel Bundle.
+          </p>
+        </header>
 
-            <div class="relative">
-              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div class="top-seller-grid">
+          <article class="top-seller-card reveal">
+            <div class="top-seller-ribbon">#1 Top Seller</div>
+            <h3>Universe + Nature Combo Pack</h3>
+            <p class="top-seller-meta">
+              Get both <strong>1000+ Universe Space Content Reels</strong> and <strong>1000+ Nature HD Reels</strong> together for pages that post motivation, facts & quotes every day.
+            </p>
+            <div class="top-seller-metric-row">
+              <div class="metric-highlight">
+                <span class="dot"></span>
+                High save & share ratio
+              </div>
+              <div class="top-seller-price">
+                <div><span style="text-decoration:line-through;opacity:.8;">₹1,198</span></div>
+                <div><strong>₹349 Combo</strong></div>
+              </div>
+            </div>
+            <div class="top-seller-actions">
+              <p class="top-seller-note">
+                Perfect if you run <strong>fact, space, travel or quote</strong> pages and want non‑stop B‑roll.
+              </p>
+              <a href="#" class="btn btn-primary btn-buy" data-whatsapp-product="Universe + Nature Combo Pack">
+                Buy Combo on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="top-seller-card reveal">
+            <h3>Gym Fitness Domination Pack</h3>
+            <p class="top-seller-meta">
+              Includes <strong>2200+ Gym Fitness Reels</strong> plus bonus transformation & motivation edits to keep your audience locked in.
+            </p>
+            <div class="top-seller-metric-row">
+              <div class="metric-highlight">
+                <span class="dot"></span>
+                Built for high‑ticket clients
+              </div>
+              <div class="top-seller-price">
+                <div><span style="text-decoration:line-through;opacity:.8;">₹799</span></div>
+                <div><strong>₹249 Only</strong></div>
+              </div>
+            </div>
+            <div class="top-seller-actions">
+              <p class="top-seller-note">
+                Best for <strong>trainers, gyms, coaches</strong> and fitness content creators.
+              </p>
+              <a href="#" class="btn btn-primary btn-buy" data-whatsapp-product="Gym Fitness Domination Pack">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="top-seller-card reveal">
+            <h3>Complete Art & Craft Master Pack</h3>
+            <p class="top-seller-meta">
+              All volumes: <strong>9000+ Art & Craft Reels (0‑6)</strong> bundled for serious art & DIY creators.
+            </p>
+            <div class="top-seller-metric-row">
+              <div class="metric-highlight">
+                <span class="dot"></span>
+                6+ months of daily content
+              </div>
+              <div class="top-seller-price">
+                <div><span style="text-decoration:line-through;opacity:.8;">₹2,394</span></div>
+                <div><strong>₹699 Pack</strong></div>
+              </div>
+            </div>
+            <div class="top-seller-actions">
+              <p class="top-seller-note">
+                Great for <strong>DIY brands, stationery shops, art pages</strong> & agencies.
+              </p>
+              <a href="#" class="btn btn-primary btn-buy" data-whatsapp-product="Complete Art & Craft Master Pack">
+                Buy on WhatsApp
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About product -->
+    <section id="about">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">
+            <span class="section-label-dot"></span>
+            About the Product
+          </span>
+          <h2>What you get inside Viral Reel Bundle</h2>
+          <p>
+            Viral Reel Bundle is a ready‑to‑use library of pre‑made reels. No camera, no editing skills, no expensive software – just plug, post & grow.
+          </p>
+        </header>
+
+        <div class="about-layout">
+          <div class="about-card reveal">
+            <h3>Designed for creators, pages & agencies</h3>
+            <p>
+              Whether you run theme pages, client accounts, or your own personal brand, these bundles give you high‑performing reels in just a few clicks.
+            </p>
+            <div class="about-features">
+              <div class="about-feature">
+                <div class="about-icon">4K</div>
                 <div>
-                  <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1.5 text-xs font-semibold text-white/85">
-                    <span class="h-2 w-2 rounded-full bg-[rgba(255,0,53,.95)]"></span>
-                    Premium bundle highlight
-                  </div>
-                  <h3 class="mt-3 text-xl sm:text-2xl font-black tracking-tight text-white">
-                    9000+ Art & Craft Reels
-                  </h3>
-                  <p class="mt-2 muted leading-relaxed">
-                    Satisfying, visually engaging reels that keep viewers watching. Great for consistent daily posting and strong audience retention.
-                  </p>
-                </div>
-
-                <div class="card rounded-2xl p-4 min-w-[220px]">
-                  <div class="text-xs muted2">Includes</div>
-                  <div class="mt-2 grid gap-2">
-                    <div class="flex items-center justify-between text-sm">
-                      <span class="text-white/90">Quantity</span>
-                      <span class="font-extrabold">9000+</span>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                      <span class="text-white/90">Watermark</span>
-                      <span class="font-extrabold">No</span>
-                    </div>
-                    <div class="flex items-center justify-between text-sm">
-                      <span class="text-white/90">Editing</span>
-                      <span class="font-extrabold">Not needed</span>
-                    </div>
-                  </div>
+                  <strong>High‑quality vertical videos</strong><br />
+                  Optimized for Instagram Reels, YouTube Shorts, TikTok & WhatsApp Status.
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-col sm:flex-row gap-3">
-                <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="top">
-                  Buy Top Seller on WhatsApp
-                </button>
-                <a class="btnGhost rounded-2xl px-5 py-3 text-sm font-semibold text-white/90 text-center" href="#testimonials">
-                  See reviews
-                </a>
-              </div>
-
-              <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-                <div class="card rounded-2xl p-3">
-                  <div class="text-xs muted2">Best for</div>
-                  <div class="text-sm font-extrabold mt-1">Engagement</div>
-                </div>
-                <div class="card rounded-2xl p-3">
-                  <div class="text-xs muted2">Post speed</div>
-                  <div class="text-sm font-extrabold mt-1">Instant</div>
-                </div>
-                <div class="card rounded-2xl p-3">
-                  <div class="text-xs muted2">Style</div>
-                  <div class="text-sm font-extrabold mt-1">Satisfying</div>
-                </div>
-                <div class="card rounded-2xl p-3">
-                  <div class="text-xs muted2">Ideal for</div>
-                  <div class="text-sm font-extrabold mt-1">Creator pages</div>
+              <div class="about-feature">
+                <div class="about-icon">∞</div>
+                <div>
+                  <strong>Lifetime access</strong><br />
+                  Download once, keep forever. Use on unlimited posts and pages.
                 </div>
               </div>
+              <div class="about-feature">
+                <div class="about-icon">✓</div>
+                <div>
+                  <strong>No watermark</strong><br />
+                  Add your own logo, subtitles, hooks, text and branding.
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="about-icon">⚡</div>
+                <div>
+                  <strong>Instant WhatsApp delivery</strong><br />
+                  Get private links & folders as soon as you message on WhatsApp.
+                </div>
+              </div>
+            </div>
+            <div class="about-pills">
+              <span class="about-pill">Universe / Space</span>
+              <span class="about-pill">Nature & Travel</span>
+              <span class="about-pill">Gym & Fitness</span>
+              <span class="about-pill">Art & Craft</span>
+              <span class="about-pill">DIY & Tutorials</span>
             </div>
           </div>
-        </div>
 
-        <div class="reveal">
-          <div class="card rounded-3xl p-5 sm:p-6">
-            <div class="text-sm font-semibold muted">Popular picks</div>
-            <div class="mt-3 grid gap-3" id="popularList"></div>
-            <div class="mt-4">
-              <button class="btn rounded-2xl w-full px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="popular">
-                Ask for best deal
-              </button>
-              <div class="mt-2 text-xs muted2 text-center">We’ll recommend the best bundle for your niche</div>
-            </div>
+          <div class="about-highlight reveal">
+            <h3 class="about-highlight-title">How Viral Reel Bundle works</h3>
+            <p>
+              You don’t need editing skills or expensive tools. Just <strong>pick a bundle</strong>, message us on
+              WhatsApp, receive the download links and start posting content today.
+            </p>
+            <ul class="about-highlight-list">
+              <li>
+                <span class="bullet">1.</span>
+                Choose your bundle(s) & tap on <strong>“Buy on WhatsApp”</strong>.
+              </li>
+              <li>
+                <span class="bullet">2.</span>
+                A WhatsApp chat opens with the bundle name pre‑filled. Send the message.
+              </li>
+              <li>
+                <span class="bullet">3.</span>
+                We reply with payment details + instant access links to your selected bundle.
+              </li>
+              <li>
+                <span class="bullet">4.</span>
+                Download, add your text / music / hooks and upload reels daily.
+              </li>
+            </ul>
+            <p style="margin-top:0.7rem;font-size:0.84rem;color:#fecaca;">
+              Tip: Combine multiple bundles (like Universe + Nature + Gym) to post across different pages and grow faster.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
-      <div class="reveal">
-        <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Testimonials</h2>
-        <p class="mt-2 muted">Real feedback from creators who post consistently with our bundles.</p>
-      </div>
+    <section id="testimonials">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">
+            <span class="section-label-dot"></span>
+            Testimonials
+          </span>
+          <h2>Creators already going viral with these bundles</h2>
+          <p>
+            Here’s what some of our early buyers say after using the Viral Reel Bundle for their pages and clients.
+          </p>
+        </header>
 
-      <div class="mt-7 grid md:grid-cols-3 gap-4 sm:gap-5">
-        <div class="reveal card rounded-3xl p-5">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">A</div>
-            <div>
-              <div class="font-extrabold">Aarav</div>
-              <div class="text-xs muted2">Instagram theme page</div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-rating">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span>5.0 • Universe + Gym</span>
             </div>
-          </div>
-          <p class="mt-4 muted leading-relaxed">“Very clean reels and easy to post. The bundle saved me hours every week.”</p>
-          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
-        </div>
-
-        <div class="reveal card rounded-3xl p-5">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">S</div>
-            <div>
-              <div class="font-extrabold">Sana</div>
-              <div class="text-xs muted2">Fitness content creator</div>
-            </div>
-          </div>
-          <p class="mt-4 muted leading-relaxed">“Gym reels are perfect and without watermark. Posting became super consistent.”</p>
-          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
-        </div>
-
-        <div class="reveal card rounded-3xl p-5">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">R</div>
-            <div>
-              <div class="font-extrabold">Rohit</div>
-              <div class="text-xs muted2">Business page manager</div>
-            </div>
-          </div>
-          <p class="mt-4 muted leading-relaxed">“Fast WhatsApp support and delivery. Great value for bulk reels.”</p>
-          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Buy -->
-    <section id="buy" class="anchor mx-auto containerX px-4 sm:px-6 pb-14 sm:pb-16">
-      <div class="reveal card rounded-3xl p-5 sm:p-7 glass2 ringGlow relative overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none" style="background:
-          radial-gradient(900px 320px at 15% 10%, rgba(255,0,53,.22), transparent 58%),
-          radial-gradient(700px 280px at 90% 20%, rgba(255,46,85,.15), transparent 60%);
-          opacity:.95;"></div>
-
-        <div class="relative grid lg:grid-cols-3 gap-6 items-start">
-          <div class="lg:col-span-2">
-            <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Buy on WhatsApp</h2>
-            <p class="mt-2 muted leading-relaxed">
-              Click a button below to open WhatsApp with a ready message. We’ll confirm bundle details and delivery.
+            <p class="testimonial-text">
+              I run 3 different theme pages and editing used to kill my time. With this bundle I just add captions and music – some reels crossed
+              <strong>500k+ views</strong> with zero extra editing.
             </p>
-
-            <div class="mt-5 grid sm:grid-cols-2 gap-3" id="buyButtons"></div>
-
-            <div class="mt-5 text-xs muted2">
-              WhatsApp Number: <span class="text-white/90 font-semibold">+8433415139</span>
-            </div>
-          </div>
-
-          <div class="card rounded-2xl p-5">
-            <div class="text-sm font-semibold muted">Quick note</div>
-            <div class="mt-2 text-sm text-white/90 font-extrabold">All bundles:</div>
-            <ul class="mt-3 grid gap-2 text-sm muted">
-              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Ready to post (no editing)</li>
-              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> No watermark</li>
-              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Mobile-friendly delivery flow</li>
-              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Fast response on WhatsApp</li>
-            </ul>
-
-            <button class="mt-5 btn rounded-2xl w-full px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="support">
-              Contact Support
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/10">
-      <div class="mx-auto containerX px-4 sm:px-6 py-10">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div>
-            <div class="flex items-center gap-3">
-              <div class="h-10 w-10 rounded-2xl ringGlow grid place-items-center bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.22),rgba(255,0,53,.55)_45%,rgba(0,0,0,.25)_90%)]">
-                <span class="text-white font-black tracking-tight">VR</span>
-              </div>
+            <div class="testimonial-footer">
               <div>
-                <div class="font-extrabold text-white">Viral Reel Bundle</div>
-                <div class="text-xs muted2">Black & Red • Modern • Fast</div>
+                <div class="testimonial-name">Rohan Sharma</div>
+                <div class="testimonial-role">@gym.motivation page owner</div>
+              </div>
+              <span class="testimonial-tag">2200+ Gym Fitness Reels</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-rating">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span>5.0 • Art & Craft Pack</span>
+            </div>
+            <p class="testimonial-text">
+              I manage art pages for clients and this <strong>Art & Craft Master Pack</strong> is a lifesaver. Content for months, all I do is schedule
+              reels. Saves me hours every week.
+            </p>
+            <div class="testimonial-footer">
+              <div>
+                <div class="testimonial-name">Sneha Verma</div>
+                <div class="testimonial-role">Social media manager</div>
+              </div>
+              <span class="testimonial-tag">9000+ Art & Craft Reels</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-quote-mark">“</div>
+            <div class="testimonial-rating">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              <span>5.0 • Nature + Space</span>
+            </div>
+            <p class="testimonial-text">
+              Space facts + nature quotes + trending sounds = crazy reach. I hit <strong>10k followers in 30 days</strong> posting daily from these
+              bundles only.
+            </p>
+            <div class="testimonial-footer">
+              <div>
+                <div class="testimonial-name">Aditi Rao</div>
+                <div class="testimonial-role">Theme page owner</div>
+              </div>
+              <span class="testimonial-tag">Universe + Nature Combo</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buy CTA -->
+    <section id="buy" class="buy-section">
+      <div class="container">
+        <div class="buy-card reveal">
+          <div class="buy-card-header">
+            <h2>Get the Full Viral Reel Bundle Mega Pack</h2>
+            <span class="btn-pill-light">Limited time launch pricing</span>
+          </div>
+          <p class="buy-card-subtitle">
+            Unlock <span class="buy-card-highlight">every single bundle</span> – Universe, Nature, Gym Fitness & all 9000+ Art & Craft volumes – with one
+            message on WhatsApp.
+          </p>
+          <div class="buy-card-row">
+            <div>
+              <div class="buy-price-info">
+                Complete value: <span class="old">₹4,000+</span>
+                <span class="now">Today: ₹999 only</span>
+              </div>
+              <div class="buy-guarantee">
+                Includes all current & future updates for these bundles. No hidden fees.
               </div>
             </div>
-            <p class="mt-4 text-sm muted leading-relaxed">
-              Ready-to-post niche reels for creators and businesses. Contact us for more reel bundle options and deals.
-            </p>
-          </div>
-
-          <div>
-            <div class="font-extrabold text-white">Sections</div>
-            <div class="mt-3 grid gap-2 text-sm">
-              <a class="muted hover:text-white transition" href="#bundles">Bundles</a>
-              <a class="muted hover:text-white transition" href="#about">About Product</a>
-              <a class="muted hover:text-white transition" href="#top">Top Seller</a>
-              <a class="muted hover:text-white transition" href="#testimonials">Testimonials</a>
-              <a class="muted hover:text-white transition" href="#buy">Buy</a>
-            </div>
-          </div>
-
-          <div>
-            <div class="font-extrabold text-white">Contact</div>
-            <div class="mt-3 text-sm muted">WhatsApp: <span class="text-white/90 font-semibold">+8433415139</span></div>
-            <div class="mt-4 flex gap-2">
-              <button class="btn rounded-2xl px-4 py-2 text-sm font-bold text-white shine" data-whatsapp="footer">
-                WhatsApp Now
-              </button>
-              <a class="btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" href="#home">
-                Back to top
+            <div class="buy-cta-group">
+              <a href="#" class="btn btn-primary buy-whatsapp-btn btn-buy" data-whatsapp-product="Full Viral Reel Bundle Mega Pack (All Niches)">
+                <span class="whatsapp-icon">💬</span>
+                Message on WhatsApp to Buy
               </a>
+              <div class="buy-note">
+                You will be redirected to WhatsApp chat with the bundle details already filled. Just send & get access.
+              </div>
             </div>
-            <div class="mt-4 text-xs muted2">© <span id="year"></span> Viral Reel Bundle. All rights reserved.</div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
   </main>
 
-  <script>
-    const PHONE = "8433415139";
-
-    const allTopics = [
-      "1000+ Universe Space Content Reels",
-      "1000+ Nature HD Reels",
-      "2200+ Gym Fitness Reels",
-      "9000+ Art & Craft Reels",
-      "9000+ Art & Craft Reels 1",
-      "9000+ Art & Craft Reels 2",
-      "9000+ Art & Craft Reels 3",
-      "9000+ Art & Craft Reels 4",
-      "9000+ Art & Craft Reels 5",
-      "9000+ Art & Craft Reels 6",
-      "1000+ Universe Space Content Reels",
-      "1000+ Nature HD Reels",
-      "2200+ Gym Fitness Reels"
-    ];
-
-    // Show 6 bundle packages in bundle section (as requested)
-    const bundlePackages = [
-      { title: "1000+ Universe Space Content Reels", tag: "Space", count: "1000+" },
-      { title: "1000+ Nature HD Reels", tag: "Nature", count: "1000+" },
-      { title: "2200+ Gym Fitness Reels", tag: "Fitness", count: "2200+" },
-      { title: "9000+ Art & Craft Reels", tag: "Art & Craft", count: "9000+" },
-      { title: "9000+ Art & Craft Reels 1", tag: "Art & Craft", count: "9000+" },
-      { title: "9000+ Art & Craft Reels 2", tag: "Art & Craft", count: "9000+" },
-    ];
-
-    const popularPicks = [
-      "9000+ Art & Craft Reels 3",
-      "9000+ Art & Craft Reels 4",
-      "9000+ Art & Craft Reels 5",
-      "9000+ Art & Craft Reels 6"
-    ];
-
-    function waLink(message){
-      const base = "https://wa.me/" + PHONE;
-      return base + "?text=" + encodeURIComponent(message);
-    }
-
-    function buildMessage(topic){
-      return `Hi Viral Reel Bundle! I want to buy: ${topic}. Please share price, delivery details, and how to receive the reels. (Ready-to-post, no watermark)`;
-    }
-
-    function buildGeneralMessage(context){
-      return `Hi Viral Reel Bundle! I’m interested in your Reel Bundles (ready-to-post, no watermark). Please share available packages, prices, and best deal. Context: ${context}.`;
-    }
-
-    // Populate bundles
-    const bundleGrid = document.getElementById('bundleGrid');
-    const buyButtons = document.getElementById('buyButtons');
-    const popularList = document.getElementById('popularList');
-
-    function iconFor(tag){
-      const map = {
-        "Space": "✦",
-        "Nature": "⟡",
-        "Fitness": "⚡",
-        "Art & Craft": "◇"
-      };
-      return map[tag] || "◆";
-    }
-
-    function gradientFor(tag){
-      const map = {
-        "Space": "radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), rgba(255,0,53,.55) 42%, rgba(0,0,0,.25) 90%)",
-        "Nature": "radial-gradient(circle at 28% 28%, rgba(255,255,255,.18), rgba(255,46,85,.45) 40%, rgba(0,0,0,.28) 90%)",
-        "Fitness": "radial-gradient(circle at 30% 35%, rgba(255,255,255,.14), rgba(255,0,53,.65) 40%, rgba(0,0,0,.25) 90%)",
-        "Art & Craft": "radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,0,53,.55) 45%, rgba(0,0,0,.26) 90%)"
-      };
-      return map[tag] || map["Space"];
-    }
-
-    function bundleCardHTML(b){
-      const msg = buildMessage(b.title);
-      return `
-        <article class="reveal card rounded-3xl p-5 sm:p-6 hover:translate-y-[-2px] transition will-change-transform">
-          <div class="flex items-start justify-between gap-3">
-            <div class="h-11 w-11 rounded-2xl border border-white/10 grid place-items-center ringGlow" style="background:${gradientFor(b.tag)}">
-              <span class="text-white font-black">${iconFor(b.tag)}</span>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Viral Reel Bundle</h3>
+          <p>
+            Plug‑and‑play reel bundles to keep your content consistent & viral. Built for creators who want results without wasting time in editing.
+          </p>
+          <p style="margin-top:0.4rem;">
+            WhatsApp support: <strong>8433415139</strong>
+          </p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-group">
+            <div class="footer-nav-title">Sections</div>
+            <div class="footer-nav-links">
+              <a href="#home">Home</a>
+              <a href="#bundles">Bundles</a>
+              <a href="#top-seller">Top Seller</a>
+              <a href="#about">About Product</a>
+              <a href="#testimonials">Testimonials</a>
+              <a href="#buy">Buy Now</a>
             </div>
-            <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">${b.count}</div>
           </div>
-          <h3 class="mt-4 text-base sm:text-lg font-black tracking-tight">${b.title}</h3>
-          <p class="mt-2 text-sm muted leading-relaxed">Ready to post • No watermark • No editing required.</p>
-          <div class="mt-4 flex items-center gap-2">
-            <button class="btn rounded-2xl px-4 py-2 text-sm font-bold text-white shine" data-topic="${encodeURIComponent(b.title)}">
-              Buy on WhatsApp
-            </button>
-            <button class="btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" data-copy="${encodeURIComponent(b.title)}">
-              Copy name
-            </button>
+          <div class="footer-nav-group">
+            <div class="footer-nav-title">Popular Bundles</div>
+            <div class="footer-nav-links">
+              <a href="#bundles">1000+ Universe Space Content Reels</a>
+              <a href="#bundles">1000+ Nature HD Reels</a>
+              <a href="#bundles">2200+ Gym Fitness Reels</a>
+              <a href="#bundles">9000+ Art & Craft Reels</a>
+            </div>
           </div>
-        </article>
-      `;
-    }
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Viral Reel Bundle. All rights reserved.</div>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <span>📞</span> <span>WhatsApp: 8433415139</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>⚡</span> <span>Instant delivery after payment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    bundleGrid.innerHTML = bundlePackages.map(bundleCardHTML).join('');
+  <script>
+    // Mobile navigation toggle
+    (function () {
+      var navToggle = document.querySelector(".nav-toggle");
+      var body = document.body;
+      if (navToggle) {
+        navToggle.addEventListener("click", function () {
+          body.classList.toggle("nav-open");
+        });
+      }
+      var navLinks = document.querySelectorAll(".nav-links a");
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          body.classList.remove("nav-open");
+        });
+      });
+    })();
 
-    // Populate buy buttons with ALL topics (as requested list)
-    function buyBtnHTML(topic){
-      return `
-        <button class="reveal btnGhost rounded-2xl px-4 py-3 text-left hover:border-[rgba(255,0,53,.35)] transition"
-          data-topic="${encodeURIComponent(topic)}">
-          <div class="text-sm font-extrabold text-white">${topic}</div>
-          <div class="text-xs muted2 mt-1">Tap to open WhatsApp with message</div>
-        </button>
-      `;
-    }
-    buyButtons.innerHTML = allTopics.map(buyBtnHTML).join('');
+    // WhatsApp Buy buttons
+    (function () {
+      var phoneNumber = "8433415139"; // As requested
+      var buttons = document.querySelectorAll(".btn-buy[data-whatsapp-product]");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          var product = btn.getAttribute("data-whatsapp-product") || "Viral Reel Bundle";
+          var message =
+            "Hi, I am interested in the \"" +
+            product +
+            "\" from Viral Reel Bundle. Please share the details, final price and payment options.";
+          var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+          window.open(url, "_blank");
+        });
+      });
+    })();
 
-    // Popular picks
-    popularList.innerHTML = popularPicks.map(t => `
-      <button class="btnGhost rounded-2xl px-4 py-3 text-left hover:border-[rgba(255,0,53,.35)] transition" data-topic="${encodeURIComponent(t)}">
-        <div class="text-sm font-extrabold text-white">${t}</div>
-        <div class="text-xs muted2 mt-1">Open WhatsApp message</div>
-      </button>
-    `).join('');
-
-    // Marquee
-    const marqueeTrack = document.getElementById('marqueeTrack');
-    const chips = [
-      "Ready to Post",
-      "No Watermark",
-      "Fast Support",
-      "Mobile Friendly",
-      "Black & Red Theme",
-      "Instant Upload",
-      "Creator Packs",
-      "Business Pages",
-      "HD Reels",
-      "Niche Bundles"
-    ];
-    const makeChip = (t)=> `
-      <div class="chip rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white/85 whitespace-nowrap">
-        <span class="text-[rgba(255,0,53,.95)] font-black">•</span> ${t}
-      </div>`;
-    const row = chips.map(makeChip).join('');
-    marqueeTrack.innerHTML = row + row; // duplicate for seamless
-
-    // WhatsApp click handlers
-    function openWhatsAppWithTopic(topic){
-      const msg = buildMessage(topic);
-      window.location.href = waLink(msg);
-    }
-    function openWhatsAppGeneral(context){
-      const msg = buildGeneralMessage(context);
-      window.location.href = waLink(msg);
-    }
-
-    document.addEventListener('click', (e) => {
-      const topicEl = e.target.closest('[data-topic]');
-      if (topicEl){
-        const topic = decodeURIComponent(topicEl.getAttribute('data-topic'));
-        openWhatsAppWithTopic(topic);
+    // Reveal on scroll animation
+    (function () {
+      var revealElements = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || !revealElements.length) {
+        revealElements.forEach(function (el) {
+          el.classList.add("is-visible");
+        });
         return;
       }
-      const waEl = e.target.closest('[data-whatsapp]');
-      if (waEl){
-        const ctx = waEl.getAttribute('data-whatsapp') || "general";
-        let textCtx = "General inquiry";
-        if (ctx === "more") textCtx = "More reel bundles / custom deal";
-        if (ctx === "top") textCtx = "Top seller: 9000+ Art & Craft Reels";
-        if (ctx === "popular") textCtx = "Popular picks recommendation";
-        if (ctx === "support") textCtx = "Support / delivery questions";
-        if (ctx === "footer") textCtx = "Footer contact";
-        if (ctx === "general") textCtx = "Product information";
-        openWhatsAppGeneral(textCtx);
-        return;
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealElements.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+    // Footer year
+    (function () {
+      var yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
       }
-      const copyEl = e.target.closest('[data-copy]');
-      if (copyEl){
-        const text = decodeURIComponent(copyEl.getAttribute('data-copy'));
-        if (navigator.clipboard && navigator.clipboard.writeText){
-          navigator.clipboard.writeText(text).then(()=> {
-            copyEl.textContent = "Copied";
-            setTimeout(()=> copyEl.textContent = "Copy name", 1200);
-          }).catch(()=>{});
-        }
-      }
-    });
-
-    // Mobile menu
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileBtn.textContent = mobileMenu.classList.contains('hidden') ? "Menu" : "Close";
-    });
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        mobileBtn.textContent = "Menu";
-      });
-    });
-
-    // Reveal on scroll
-    const revealEls = Array.from(document.querySelectorAll('.reveal'));
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) en.target.classList.add('show');
-      });
-    }, {threshold: 0.12});
-    revealEls.forEach(el => io.observe(el));
-
-    // Smooth scroll for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id.length < 2) return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior: 'smooth', block: 'start'});
-      });
-    });
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
