@@ -2,562 +2,526 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0f" />
   <title>Viral Reel Bundle</title>
-  <meta name="description" content="Viral Reel Bundle — high-converting reel bundles in a black & red theme. Instant delivery, commercial-friendly, ready to post." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            ink: '#07070A',
+            ink2: '#0B0B12',
+            redx: '#ff0035',
+            red2: '#ff2e55'
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,0,53,.25), 0 18px 60px rgba(0,0,0,.55)',
+            card: '0 10px 35px rgba(0,0,0,.55)'
+          }
+        }
+      }
+    }
+  </script>
   <style>
     :root{
-      --bg:#07070a;
-      --bg2:#0a0a10;
-      --card:rgba(255,255,255,.055);
-      --card2:rgba(255,255,255,.075);
-      --border:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.90);
-      --muted:rgba(255,255,255,.65);
-      --red:#ff2b2b;
-      --red2:#ff0033;
-      --red3:#b9001f;
-      --glow: 0 0 0 1px rgba(255,255,255,.08), 0 18px 45px rgba(0,0,0,.55);
+      --bg0:#07070a;
+      --bg1:#0b0b12;
+      --r:#ff0035;
+      --r2:#ff2e55;
+      --w:rgba(255,255,255,.92);
+      --wm:rgba(255,255,255,.72);
+      --wl:rgba(255,255,255,.55);
+      --glass:rgba(16,16,25,.45);
+      --stroke:rgba(255,255,255,.08);
     }
-    html{scroll-behavior:smooth}
+    html,body{height:100%;}
     body{
+      margin:0;
       background:
-        radial-gradient(900px 500px at 10% 0%, rgba(255,0,51,.22), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(255,43,43,.16), transparent 60%),
-        radial-gradient(700px 400px at 50% 95%, rgba(255,0,51,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      color:var(--text);
+        radial-gradient(1200px 800px at 10% 10%, rgba(255,0,53,.18), transparent 55%),
+        radial-gradient(900px 600px at 95% 20%, rgba(255,58,110,.14), transparent 55%),
+        radial-gradient(900px 700px at 75% 95%, rgba(255,0,53,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color: var(--w);
       overflow-x:hidden;
-      font-feature-settings:"ss01" 1,"ss02" 1;
     }
+    *{scrollbar-color: rgba(255,0,53,.35) rgba(255,255,255,.06);}
+    *::-webkit-scrollbar{height:10px;width:10px;}
+    *::-webkit-scrollbar-thumb{background: rgba(255,0,53,.35); border-radius: 999px; border:2px solid rgba(0,0,0,.25);}
+    *::-webkit-scrollbar-track{background: rgba(255,255,255,.06); border-radius: 999px;}
+    .containerX{max-width:1120px;}
     .glass{
-      background:rgba(10,10,16,.55);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass2{
+      background: rgba(12,12,20,.55);
+      border: 1px solid rgba(255,255,255,.08);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 10px 40px rgba(0,0,0,.30);
     }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--glow);
-    }
-    .card:hover{ transform: translateY(-2px); }
     .btn{
-      background: linear-gradient(90deg, var(--red2), var(--red));
-      box-shadow: 0 12px 28px rgba(255,0,51,.22), 0 0 0 1px rgba(255,255,255,.07) inset;
+      position:relative;
+      border: 1px solid rgba(255,0,53,.32);
+      box-shadow: 0 0 0 1px rgba(255,0,53,.14), 0 16px 50px rgba(0,0,0,.45);
+      background: linear-gradient(135deg, rgba(255,0,53,.95), rgba(255,46,85,.75));
+      transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+      will-change: transform;
     }
-    .btn:hover{ filter:saturate(1.08) brightness(1.04); transform: translateY(-1px); }
-    .btn:active{ transform: translateY(0px) scale(.99); }
-    .btn-outline{
-      background: rgba(255,255,255,.02);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-    .btn-outline:hover{ border-color: rgba(255,0,51,.55); box-shadow: 0 14px 34px rgba(255,0,51,.10), 0 0 0 1px rgba(255,255,255,.07) inset; }
-    .grid-glow:before{
+    .btn:hover{transform: translateY(-1px); filter: saturate(1.05);}
+    .btn:active{transform: translateY(0px) scale(.99);}
+    .btn::after{
       content:"";
       position:absolute; inset:-2px;
-      background:
-        radial-gradient(1400px 500px at 0% 0%, rgba(255,0,51,.10), transparent 55%),
-        radial-gradient(1400px 500px at 100% 25%, rgba(255,43,43,.08), transparent 60%);
-      filter: blur(8px);
-      z-index:-1;
-    }
-    .dot{
-      position:absolute;
-      width: 10px; height:10px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,0,51,.55) 45%, rgba(255,0,51,0) 70%);
-      border-radius:999px;
-      filter: blur(.1px);
-      opacity:.75;
-      animation: floaty 14s ease-in-out infinite;
+      border-radius: 9999px;
+      background: radial-gradient(300px 120px at 20% 10%, rgba(255,255,255,.35), transparent 55%);
+      opacity:.45;
       pointer-events:none;
+      mix-blend-mode: overlay;
     }
-    .dot:nth-child(2){ width:14px;height:14px; opacity:.55; animation-duration: 18s; }
-    .dot:nth-child(3){ width:8px;height:8px; opacity:.65; animation-duration: 13s; }
-    .dot:nth-child(4){ width:12px;height:12px; opacity:.50; animation-duration: 20s; }
-    .dot:nth-child(5){ width:9px;height:9px; opacity:.60; animation-duration: 16s; }
-    @keyframes floaty{
-      0%{ transform: translate3d(0,0,0) }
-      50%{ transform: translate3d(0,-22px,0) }
-      100%{ transform: translate3d(0,0,0) }
+    .btnGhost{
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
     }
+    .btnGhost:hover{transform: translateY(-1px); border-color: rgba(255,0,53,.35);}
+    .muted{color: var(--wm);}
+    .muted2{color: var(--wl);}
+    .ringGlow{
+      box-shadow: 0 0 0 1px rgba(255,0,53,.2), 0 18px 60px rgba(0,0,0,.6);
+    }
+    .gradText{
+      background: linear-gradient(90deg, #fff, rgba(255,255,255,.75), rgba(255,0,53,.95));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .chip{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      transform: translateZ(0);
+    }
+    .card:hover{
+      border-color: rgba(255,0,53,.28);
+    }
+    .badge{
+      border:1px solid rgba(255,0,53,.35);
+      background: linear-gradient(135deg, rgba(255,0,53,.18), rgba(255,255,255,.05));
+    }
+    .sectionTitle{
+      letter-spacing: -0.02em;
+    }
+    .anchor{scroll-margin-top: 92px;}
+    .gridFade{
+      mask-image: radial-gradient(1800px 700px at 50% 20%, #000 50%, transparent 85%);
+      -webkit-mask-image: radial-gradient(1800px 700px at 50% 20%, #000 50%, transparent 85%);
+    }
+    .bgGrid{
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: .35;
+      filter: drop-shadow(0 0 20px rgba(255,0,53,.12));
+    }
+
+    /* Motion elements */
+    .orb{
+      position:absolute;
+      border-radius:9999px;
+      filter: blur(18px);
+      opacity:.65;
+      pointer-events:none;
+      mix-blend-mode: screen;
+      will-change: transform;
+    }
+    .orb1{
+      width: 220px; height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), rgba(255,0,53,.9) 40%, transparent 70%);
+      animation: float1 10s ease-in-out infinite;
+      left: -60px; top: 80px;
+    }
+    .orb2{
+      width: 280px; height: 280px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.35), rgba(255,46,85,.75) 38%, transparent 72%);
+      animation: float2 12s ease-in-out infinite;
+      right: -90px; top: 160px;
+    }
+    .orb3{
+      width: 240px; height: 240px;
+      background: radial-gradient(circle at 30% 35%, rgba(255,255,255,.25), rgba(255,0,53,.55) 45%, transparent 74%);
+      animation: float3 14s ease-in-out infinite;
+      left: 18%; bottom: -110px;
+      opacity: .5;
+    }
+    @keyframes float1{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(20px,22px) scale(1.03);}}
+    @keyframes float2{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(-18px,26px) scale(1.04);}}
+    @keyframes float3{0%,100%{transform: translate(0,0) scale(1);}50%{transform: translate(22px,-18px) scale(1.02);}}
+
     .marquee{
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      overflow:hidden;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
     }
-    .marquee-track{
+    .marqueeTrack{
       display:flex;
+      gap: 14px;
       width:max-content;
-      gap:12px;
-      animation: marquee 26s linear infinite;
+      padding: 12px 0;
+      animation: marquee 22s linear infinite;
+      will-change: transform;
     }
-    @keyframes marquee{
-      from{ transform: translateX(0); }
-      to{ transform: translateX(-50%); }
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    @media (prefers-reduced-motion: reduce){
+      .marqueeTrack{animation:none;}
+      .orb{animation:none;}
+      .reveal{transition:none !important; transform:none !important; opacity:1 !important;}
     }
+
+    /* Reveal on scroll */
+    .reveal{opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease;}
+    .reveal.show{opacity:1; transform: translateY(0);}
+
+    /* Subtle shine */
     .shine{
       position:relative;
       overflow:hidden;
     }
-    .shine:after{
+    .shine::before{
       content:"";
       position:absolute;
       top:-40%;
-      left:-35%;
-      width:45%;
-      height:180%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+      left:-60%;
+      width: 70%;
+      height: 180%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
       transform: rotate(18deg);
-      animation: shine 5.8s ease-in-out infinite;
+      animation: shine 4.8s ease-in-out infinite;
       pointer-events:none;
+      opacity:.8;
     }
     @keyframes shine{
-      0%{ transform: translateX(-140%) rotate(18deg); opacity:.0; }
-      12%{ opacity:.9; }
-      28%{ opacity:.0; }
-      100%{ transform: translateX(260%) rotate(18deg); opacity:.0; }
+      0%{transform: translateX(-40%) rotate(18deg); opacity:0;}
+      15%{opacity:.55;}
+      40%{opacity:0;}
+      100%{transform: translateX(240%) rotate(18deg); opacity:0;}
     }
-    .reveal{
-      opacity:0;
-      transform: translateY(10px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.show{
-      opacity:1;
-      transform: translateY(0);
-    }
-    .active-pill{
-      background: rgba(255,0,51,.10);
-      border-color: rgba(255,0,51,.45)!important;
-      color: rgba(255,255,255,.92);
-    }
-    .kbd{
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      padding:.18rem .42rem;
-      border-radius:.5rem;
-      color: rgba(255,255,255,.78);
-      font-size:.72rem;
-    }
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
-    }
-    .ring-red{
-      box-shadow: 0 0 0 1px rgba(255,0,51,.35) inset, 0 18px 50px rgba(255,0,51,.10);
-    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {outline: 2px solid rgba(255,0,53,.7); outline-offset: 3px; border-radius: 12px;}
+    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip:focus{left:14px;top:14px;width:auto;height:auto;z-index:1000;padding:10px 12px;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:12px;}
   </style>
 </head>
-<body class="min-h-screen">
-  <!-- Floating dots -->
-  <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
-    <span class="dot" style="left:8%; top:18%"></span>
-    <span class="dot" style="left:18%; top:64%"></span>
-    <span class="dot" style="left:62%; top:22%"></span>
-    <span class="dot" style="left:82%; top:56%"></span>
-    <span class="dot" style="left:46%; top:78%"></span>
-  </div>
+<body class="font-sans">
+  <a class="skip" href="#home">Skip to content</a>
 
-  <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
-      <div class="glass rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between gap-3">
-        <a href="#home" class="flex items-center gap-2 min-w-0">
-          <div class="h-9 w-9 rounded-xl ring-red bg-gradient-to-br from-red-600/35 to-black/40 border border-white/10 flex items-center justify-center">
-            <span class="text-white font-semibold">VR</span>
-          </div>
-          <div class="min-w-0">
-            <div class="font-semibold tracking-tight text-white leading-5 truncate">Viral Reel Bundle</div>
-            <div class="text-xs text-white/55 -mt-0.5 truncate">Black • Red • High-converting reels</div>
-          </div>
-        </a>
-
-        <nav class="hidden md:flex items-center gap-2">
-          <a class="px-3 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition" href="#bundles">Bundle</a>
-          <a class="px-3 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition" href="#about">About Product</a>
-          <a class="px-3 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition" href="#top-seller">Top Seller</a>
-          <a class="px-3 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition" href="#testimonials">Testimonial</a>
-          <a class="px-3 py-2 rounded-xl text-sm text-white/70 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition" href="#buy">Buy</a>
-        </nav>
-
-        <div class="flex items-center gap-2">
-          <button id="themePulse" class="hidden sm:inline-flex btn-outline rounded-xl px-3 py-2 text-sm text-white/80 hover:text-white transition">
-            Pulse
-          </button>
-          <a id="navBuy" href="#buy" class="btn rounded-xl px-4 py-2 text-sm font-semibold text-white transition">
-            Buy Now
+  <!-- Sticky Header -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="mx-auto containerX px-4 sm:px-6">
+      <div class="mt-3 glass rounded-2xl">
+        <div class="flex items-center justify-between px-4 sm:px-5 py-3">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-2xl ringGlow grid place-items-center bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.22),rgba(255,0,53,.55)_45%,rgba(0,0,0,.25)_90%)]">
+              <span class="text-white font-black tracking-tight">VR</span>
+            </div>
+            <div class="leading-tight">
+              <div class="font-extrabold tracking-tight text-white">Viral Reel Bundle</div>
+              <div class="text-xs muted2">Ready-to-post • No watermark • No editing</div>
+            </div>
           </a>
-          <button id="menuBtn" class="md:hidden btn-outline rounded-xl px-3 py-2 text-sm text-white/85">
-            Menu
-          </button>
-        </div>
-      </div>
 
-      <!-- Mobile menu -->
-      <div id="mobileMenu" class="hidden mt-2 glass rounded-2xl p-2">
-        <a class="block px-3 py-2 rounded-xl text-sm text-white/75 hover:text-white hover:bg-white/5" href="#bundles">Bundle</a>
-        <a class="block px-3 py-2 rounded-xl text-sm text-white/75 hover:text-white hover:bg-white/5" href="#about">About Product</a>
-        <a class="block px-3 py-2 rounded-xl text-sm text-white/75 hover:text-white hover:bg-white/5" href="#top-seller">Top Seller</a>
-        <a class="block px-3 py-2 rounded-xl text-sm text-white/75 hover:text-white hover:bg-white/5" href="#testimonials">Testimonial</a>
-        <a class="block px-3 py-2 rounded-xl text-sm text-white/75 hover:text-white hover:bg-white/5" href="#buy">Buy</a>
-        <div class="divider my-2"></div>
-        <button id="mobilePulse" class="w-full btn-outline rounded-xl px-3 py-2 text-sm text-white/85">Pulse</button>
+          <nav class="hidden md:flex items-center gap-1">
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#bundles">Bundles</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#about">About</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#top">Top Seller</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#testimonials">Testimonials</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#buy">Buy</a>
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <a id="headerBuy" href="#buy" class="hidden sm:inline-flex btn rounded-full px-4 py-2 text-sm font-semibold text-white shine">
+              Buy on WhatsApp
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden btnGhost rounded-xl px-3 py-2 text-sm font-semibold text-white/90">
+              Menu
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 px-3 py-3">
+          <div class="grid gap-1">
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#bundles">Bundles</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#about">About</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#top">Top Seller</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#testimonials">Testimonials</a>
+            <a class="px-3 py-2 rounded-xl text-sm muted hover:text-white hover:bg-white/5 transition" href="#buy">Buy</a>
+          </div>
+          <div class="mt-3 flex gap-2">
+            <a href="#buy" class="flex-1 btn rounded-xl px-4 py-2 text-sm font-semibold text-white text-center">Buy on WhatsApp</a>
+            <a href="#bundles" class="flex-1 btnGhost rounded-xl px-4 py-2 text-sm font-semibold text-white/90 text-center">View Bundles</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Main -->
-  <main id="home" class="relative pt-24 sm:pt-28">
-    <!-- Hero -->
+  <!-- Hero -->
+  <main id="home" class="pt-[100px] sm:pt-[110px]">
     <section class="relative">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="relative grid-glow rounded-3xl">
-          <div class="card shine rounded-3xl p-6 sm:p-10 lg:p-12">
-            <div class="grid lg:grid-cols-12 gap-8 items-center">
-              <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75">
-                  <span class="inline-block h-2 w-2 rounded-full bg-red-500 shadow-[0_0_25px_rgba(255,0,51,.55)]"></span>
-                  Ready-to-Post • Instant Delivery • Black & Red Premium
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+
+      <div class="absolute inset-0 gridFade pointer-events-none">
+        <div class="bgGrid absolute inset-0"></div>
+      </div>
+
+      <div class="mx-auto containerX px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center py-10 sm:py-14">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1.5 text-xs font-semibold text-white/85">
+              <span class="h-2 w-2 rounded-full bg-[rgba(255,0,53,.95)] shadow-[0_0_0_4px_rgba(255,0,53,.18)]"></span>
+              Fast growth content packs for creators & businesses
+            </div>
+
+            <h1 class="mt-4 text-3xl sm:text-5xl font-black tracking-tight leading-[1.05]">
+              Sell more, grow faster with <span class="gradText">ready-to-post Reel Bundles</span>
+            </h1>
+
+            <p class="mt-4 text-base sm:text-lg muted leading-relaxed">
+              High-quality reels organized by niche. No editing needed, no watermark, and ready to post instantly.
+              Perfect for Instagram, Facebook, YouTube Shorts, and creator pages.
+            </p>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a id="heroCta" class="btn rounded-2xl px-5 py-3 text-sm sm:text-base font-bold text-white text-center shine" href="#buy">
+                Buy via WhatsApp (+8433415139)
+              </a>
+              <a class="btnGhost rounded-2xl px-5 py-3 text-sm sm:text-base font-semibold text-white/90 text-center" href="#bundles">
+                Explore bundles
+              </a>
+            </div>
+
+            <div class="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
+              <div class="card px-3 py-3 rounded-2xl">
+                <div class="text-sm font-extrabold text-white">No Watermark</div>
+                <div class="text-xs muted2 mt-1">Clean, professional uploads</div>
+              </div>
+              <div class="card px-3 py-3 rounded-2xl">
+                <div class="text-sm font-extrabold text-white">Ready to Post</div>
+                <div class="text-xs muted2 mt-1">No editing needed</div>
+              </div>
+              <div class="card px-3 py-3 rounded-2xl">
+                <div class="text-sm font-extrabold text-white">Instant Delivery</div>
+                <div class="text-xs muted2 mt-1">Fast WhatsApp support</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="card rounded-3xl p-4 sm:p-6 glass2 ringGlow relative overflow-hidden">
+              <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.28),rgba(255,0,53,.7)_38%,transparent_72%)] blur-2xl opacity-80"></div>
+              <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.18),rgba(255,46,85,.55)_40%,transparent_72%)] blur-2xl opacity-70"></div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="text-sm font-semibold muted">Your dashboard</div>
+                  <div class="text-xl sm:text-2xl font-black tracking-tight text-white">Pick a niche. Post daily. Go viral.</div>
+                </div>
+                <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">Black + Red Theme</div>
+              </div>
+
+              <div class="mt-5 grid gap-3">
+                <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <div class="text-sm font-extrabold text-white">Trending Formats Included</div>
+                      <div class="text-xs muted2 mt-1">Cinematic • Aesthetic • Loop • POV • Satisfying</div>
+                    </div>
+                    <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">
+                      <span class="text-white font-black">★</span>
+                    </div>
+                  </div>
                 </div>
 
-                <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
-                  Sell faster with <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-200">viral reel bundles</span> that look premium and convert.
-                </h1>
-
-                <p class="mt-4 text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
-                  Get curated reels by niche, organized for quick posting. Perfect for creators, agencies, and business pages — save hours of editing and stay consistent every day.
-                </p>
-
-                <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a href="#bundles" class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white text-center transition">
-                    Explore Bundles
-                  </a>
-                  <a href="#buy" class="btn-outline rounded-2xl px-5 py-3 text-sm font-semibold text-white/85 text-center transition">
-                    Buy on WhatsApp <span class="ml-2 kbd">1-click</span>
-                  </a>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
+                    <div class="text-xs muted2">Quality</div>
+                    <div class="text-sm font-extrabold text-white mt-1">HD / High Bitrate</div>
+                    <div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden">
+                      <div class="h-full w-[86%] bg-[linear-gradient(90deg,rgba(255,0,53,.95),rgba(255,255,255,.18))]"></div>
+                    </div>
+                  </div>
+                  <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
+                    <div class="text-xs muted2">Effort</div>
+                    <div class="text-sm font-extrabold text-white mt-1">Zero Editing</div>
+                    <div class="mt-3 h-2 rounded-full bg-white/5 overflow-hidden">
+                      <div class="h-full w-[96%] bg-[linear-gradient(90deg,rgba(255,0,53,.85),rgba(255,255,255,.18))]"></div>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl">
-                  <div class="rounded-2xl border border-white/10 bg-white/4 p-3">
-                    <div class="text-white font-semibold">Curated</div>
-                    <div class="text-xs text-white/60 mt-0.5">Niche-focused reels</div>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/4 p-3">
-                    <div class="text-white font-semibold">Organized</div>
-                    <div class="text-xs text-white/60 mt-0.5">By category packs</div>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/4 p-3">
-                    <div class="text-white font-semibold">Fast</div>
-                    <div class="text-xs text-white/60 mt-0.5">Post in minutes</div>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/4 p-3">
-                    <div class="text-white font-semibold">Support</div>
-                    <div class="text-xs text-white/60 mt-0.5">Quick WhatsApp help</div>
+                <div class="card rounded-2xl p-4 hover:translate-y-[-1px] transition">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="text-xs muted2">Delivery</div>
+                      <div class="text-sm font-extrabold text-white mt-1">Via WhatsApp (+8433415139)</div>
+                    </div>
+                    <a class="btn rounded-xl px-4 py-2 text-xs font-bold text-white whitespace-nowrap" href="#buy">Get now</a>
                   </div>
                 </div>
               </div>
 
-              <div class="lg:col-span-5">
-                <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/6 to-white/3 p-5 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,.55)]">
-                  <div class="flex items-center justify-between gap-3">
-                    <div>
-                      <div class="text-sm text-white/70">Featured Pack</div>
-                      <div class="text-lg font-semibold text-white leading-tight">Top Seller Bundle</div>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/75">
-                      Limited Deal
-                    </div>
-                  </div>
-
-                  <div class="mt-5 space-y-3">
-                    <div class="rounded-2xl border border-white/10 bg-white/4 p-4 flex gap-3">
-                      <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10 flex items-center justify-center">
-                        <span class="text-white font-semibold">01</span>
-                      </div>
-                      <div class="min-w-0">
-                        <div class="font-semibold text-white truncate">1000+ Universe Space Content Reels</div>
-                        <div class="text-xs text-white/60 mt-0.5">Aesthetic space vibes • Trending edits</div>
-                      </div>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/4 p-4 flex gap-3">
-                      <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10 flex items-center justify-center">
-                        <span class="text-white font-semibold">02</span>
-                      </div>
-                      <div class="min-w-0">
-                        <div class="font-semibold text-white truncate">2200+ Gym Fitness Reels</div>
-                        <div class="text-xs text-white/60 mt-0.5">Workouts • Motivation • Transformations</div>
-                      </div>
-                    </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/4 p-4 flex gap-3">
-                      <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10 flex items-center justify-center">
-                        <span class="text-white font-semibold">03</span>
-                      </div>
-                      <div class="min-w-0">
-                        <div class="font-semibold text-white truncate">1000+ Nature HD Reels</div>
-                        <div class="text-xs text-white/60 mt-0.5">Cinematic landscapes • Calm content</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mt-5 flex flex-col sm:flex-row gap-3">
-                    <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition"
-                      data-buy="Top Seller Bundle (Universe + Gym + Nature)">
-                      Buy Featured Pack
-                    </button>
-                    <a href="#bundles" class="btn-outline w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 text-center transition">
-                      View All Packs
-                    </a>
-                  </div>
-
-                  <div class="mt-4 text-xs text-white/55">
-                    Tip: Tap <span class="kbd">Pulse</span> for a clean red motion effect.
-                  </div>
-                </div>
+              <div class="mt-5 text-xs muted2">
+                Tip: Post 2–3 reels/day consistently for faster reach.
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Marquee -->
-        <div class="mt-6 marquee">
-          <div class="marquee-track">
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Instant delivery workflow</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Niche packs for consistent posting</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">High-retention edits</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Organized folders included</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Support on WhatsApp</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Upgrade your content pipeline</div>
-
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Instant delivery workflow</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Niche packs for consistent posting</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">High-retention edits</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Organized folders included</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Support on WhatsApp</div>
-            <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Upgrade your content pipeline</div>
+      <!-- Marquee -->
+      <div class="marquee mt-2">
+        <div class="mx-auto containerX px-4 sm:px-6">
+          <div class="marqueeTrack" id="marqueeTrack">
+            <!-- duplicated via JS for seamless loop -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bundles (show 6 package cards) -->
-    <section id="bundles" class="py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex items-end justify-between gap-4">
-          <div class="reveal">
-            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Bundle Packages</h2>
-            <p class="mt-2 text-white/65 max-w-2xl">Pick a niche and start posting. Each bundle is curated for strong retention and consistent aesthetics.</p>
-          </div>
-          <div class="hidden sm:flex items-center gap-2 reveal">
-            <button id="shuffleBtn" class="btn-outline rounded-xl px-4 py-2 text-sm text-white/85 hover:text-white transition">Shuffle Packs</button>
-          </div>
+    <!-- Bundles (show 6) -->
+    <section id="bundles" class="anchor mx-auto containerX px-4 sm:px-6 py-12 sm:py-14">
+      <div class="flex items-end justify-between gap-6 reveal">
+        <div>
+          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Bundle Packages</h2>
+          <p class="mt-2 muted">Pick a niche bundle and start posting immediately. Reels are ready to post, without watermark.</p>
         </div>
+        <a class="hidden sm:inline-flex btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" href="#buy">Buy / Contact</a>
+      </div>
 
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- 6 cards -->
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 01</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">1000+ Universe Space Content Reels</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">Premium</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Aesthetic space edits & trending vibes</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Great for science pages & curiosity hooks</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Organized folders</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="1000+ Universe Space Content Reels">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="space">Preview</button>
-            </div>
-          </article>
+      <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" id="bundleGrid"></div>
 
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 02</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">1000+ Nature HD Reels</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">HD</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Cinematic landscapes & calming loops</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Perfect for travel & quote pages</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Consistent color tones</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="1000+ Nature HD Reels">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="nature">Preview</button>
-            </div>
-          </article>
-
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 03</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">2200+ Gym Fitness Reels</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">Hot</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Workouts, motivation & transformations</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Great retention with strong hooks</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Daily posting-ready</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="2200+ Gym Fitness Reels">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="gym">Preview</button>
-            </div>
-          </article>
-
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 04</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">9000+ Art & Craft Reels</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">Mega</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Satisfying DIY, crafts, and creators</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> High replay value</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Ideal for marketplace growth</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="9000+ Art & Craft Reels">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="craft">Preview</button>
-            </div>
-          </article>
-
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 05</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">9000+ Art & Craft Reels 1</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">New</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Fresh variations & satisfying cuts</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Great for craft/DIY monetization</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Clean folder structure</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="9000+ Art & Craft Reels 1">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="craft1">Preview</button>
-            </div>
-          </article>
-
-          <article class="card reveal rounded-3xl p-5 transition duration-300 ease-out">
-            <div class="flex items-start justify-between gap-3">
-              <div class="min-w-0">
-                <div class="text-xs text-white/55">Bundle Package 06</div>
-                <h3 class="mt-1 text-lg font-semibold text-white">9000+ Art & Craft Reels 2</h3>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">Pro</div>
-            </div>
-            <ul class="mt-4 space-y-2 text-sm text-white/70">
-              <li class="flex gap-2"><span class="text-red-400">•</span> Extra variety for longer content plans</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Strong watch-time loops</li>
-              <li class="flex gap-2"><span class="text-red-400">•</span> Perfect for daily reels</li>
-            </ul>
-            <div class="mt-5 flex gap-2">
-              <button class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition" data-buy="9000+ Art & Craft Reels 2">Buy on WhatsApp</button>
-              <button class="btn-outline rounded-2xl px-4 py-3 text-sm font-semibold text-white/85 transition" data-preview="craft2">Preview</button>
-            </div>
-          </article>
-        </div>
-
-        <div class="mt-6 sm:hidden">
-          <button id="shuffleBtnMobile" class="w-full btn-outline rounded-2xl px-4 py-3 text-sm text-white/85">Shuffle Packs</button>
-        </div>
-
-        <div class="mt-8 rounded-3xl border border-white/10 bg-white/4 p-5 sm:p-6 reveal">
-          <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-            <div>
-              <div class="text-sm text-white/70">More bundle topics (available on request)</div>
-              <div class="mt-1 text-white/85 text-sm leading-relaxed">
-                9000+ Art & Craft Reels 3 • 9000+ Art & Craft Reels 4 • 9000+ Art & Craft Reels 5 • 9000+ Art & Craft Reels 6 •
-                1000+ Universe Space Content Reels • 1000+ Nature HD Reels • 2200+ Gym Fitness Reels
-              </div>
-            </div>
-            <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="Custom Selection (choose from Art & Craft 3-6, Universe, Nature, Gym)">
-              Ask for Custom Pack
-            </button>
+      <div class="mt-6 reveal">
+        <div class="card rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <div class="text-sm font-extrabold text-white">Want more Reel Bundles?</div>
+            <div class="text-sm muted mt-1">Contact us on WhatsApp for more reel bundle options and custom deals.</div>
           </div>
+          <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="more">
+            Contact on WhatsApp
+          </button>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-5 items-stretch">
-          <div class="lg:col-span-7 card reveal rounded-3xl p-6 sm:p-8">
-            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">About Product</h2>
-            <p class="mt-3 text-white/70 leading-relaxed">
-              Viral Reel Bundle delivers niche-based reel packs designed for fast posting and consistent growth. Use them for theme pages, client work, or your own content strategy.
-            </p>
+    <section id="about" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
+      <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+        <div class="reveal">
+          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">About the Product</h2>
+          <p class="mt-3 muted leading-relaxed">
+            Viral Reel Bundle is a curated library of niche reels you can post instantly.
+            Each bundle is organized for consistent publishing without spending hours on editing.
+          </p>
 
-            <div class="mt-6 grid sm:grid-cols-2 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="font-semibold text-white">What you get</div>
-                <div class="mt-2 text-sm text-white/70 leading-relaxed">
-                  Curated reels by category, arranged for simple browsing and quick uploading.
+          <div class="mt-5 grid gap-3">
+            <div class="card rounded-2xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
+                <div>
+                  <div class="font-extrabold text-white text-sm">Ready to Post</div>
+                  <div class="text-sm muted2 mt-1">Just download and upload. No editing required.</div>
                 </div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="font-semibold text-white">Best for</div>
-                <div class="mt-2 text-sm text-white/70 leading-relaxed">
-                  Creators, agencies, theme pages, and businesses who want consistent output.
+            </div>
+            <div class="card rounded-2xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
+                <div>
+                  <div class="font-extrabold text-white text-sm">No Watermark</div>
+                  <div class="text-sm muted2 mt-1">Clean visuals for brands, creators, and pages.</div>
                 </div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="font-semibold text-white">Workflow</div>
-                <div class="mt-2 text-sm text-white/70 leading-relaxed">
-                  Choose a bundle → receive details on WhatsApp → download → post daily.
-                </div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="font-semibold text-white">Support</div>
-                <div class="mt-2 text-sm text-white/70 leading-relaxed">
-                  Need recommendations? We’ll help you pick the right niche for your audience.
+            </div>
+            <div class="card rounded-2xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-2xl bg-white/5 border border-white/10 grid place-items-center">✓</div>
+                <div>
+                  <div class="font-extrabold text-white text-sm">Fast Support</div>
+                  <div class="text-sm muted2 mt-1">Buy and receive details quickly via WhatsApp.</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="lg:col-span-5 card reveal rounded-3xl p-6 sm:p-8">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-white">Quick Selector</h3>
-              <span class="text-xs text-white/60">Tap a niche</span>
+        <div class="reveal">
+          <div class="card rounded-3xl p-5 sm:p-6 glass2 ringGlow">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <div class="text-sm font-semibold muted">How it works</div>
+                <div class="text-xl font-black tracking-tight text-white">3 steps to start posting today</div>
+              </div>
+              <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">Simple</div>
             </div>
 
-            <div class="mt-4 flex flex-wrap gap-2" id="nichePills">
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="1000+ Universe Space Content Reels">Universe Space</button>
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="1000+ Nature HD Reels">Nature HD</button>
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="2200+ Gym Fitness Reels">Gym Fitness</button>
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="9000+ Art & Craft Reels">Art & Craft</button>
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="9000+ Art & Craft Reels 4">Art & Craft 4</button>
-              <button class="pill btn-outline rounded-full px-3 py-2 text-sm text-white/80 border-white/10" data-niche="9000+ Art & Craft Reels 6">Art & Craft 6</button>
-            </div>
-
-            <div class="mt-5 rounded-2xl border border-white/10 bg-white/4 p-4">
-              <div class="text-xs text-white/60">Selected</div>
-              <div id="selectedNiche" class="mt-1 text-white font-semibold">1000+ Universe Space Content Reels</div>
-              <div class="mt-3 flex gap-2">
-                <button id="buySelected" class="btn w-full rounded-2xl px-4 py-3 text-sm font-semibold text-white transition">
-                  Buy Selected on WhatsApp
-                </button>
+            <div class="mt-5 grid gap-3">
+              <div class="card rounded-2xl p-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">1</div>
+                    <div>
+                      <div class="text-sm font-extrabold">Choose Bundle</div>
+                      <div class="text-xs muted2 mt-1">Pick your niche package</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card rounded-2xl p-4">
+                <div class="flex items-center gap-3">
+                  <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">2</div>
+                  <div>
+                    <div class="text-sm font-extrabold">Message on WhatsApp</div>
+                    <div class="text-xs muted2 mt-1">Auto-filled product message</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card rounded-2xl p-4">
+                <div class="flex items-center gap-3">
+                  <div class="h-9 w-9 rounded-2xl bg-[linear-gradient(135deg,rgba(255,0,53,.9),rgba(255,255,255,.06))] border border-white/10 grid place-items-center font-black">3</div>
+                  <div>
+                    <div class="text-sm font-extrabold">Receive & Post</div>
+                    <div class="text-xs muted2 mt-1">Start posting immediately</div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="mt-5 text-xs text-white/55">
-              Pro tip: Combine Universe + Nature for a clean aesthetic content plan.
+            <div class="mt-5 flex flex-col sm:flex-row gap-3">
+              <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="general">
+                Chat on WhatsApp
+              </button>
+              <a class="btnGhost rounded-2xl px-5 py-3 text-sm font-semibold text-white/90 text-center" href="#bundles">
+                See available bundles
+              </a>
             </div>
           </div>
         </div>
@@ -565,450 +529,459 @@
     </section>
 
     <!-- Top Seller -->
-    <section id="top-seller" class="py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row gap-5">
-          <div class="card reveal rounded-3xl p-6 sm:p-8 lg:flex-1">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Top Seller</h2>
-                <p class="mt-2 text-white/70 max-w-2xl">The most requested niche combo for fast growth and consistent posting.</p>
-              </div>
-              <div class="hidden sm:inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs text-white/80">
-                <span class="inline-block h-2 w-2 rounded-full bg-red-500"></span>
-                Trending
-              </div>
-            </div>
+    <section id="top" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
+      <div class="reveal flex items-end justify-between gap-6">
+        <div>
+          <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Top Seller</h2>
+          <p class="mt-2 muted">Our most requested bundle—fastest niche to scale for many pages.</p>
+        </div>
+        <div class="hidden sm:block badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">
+          Bestseller
+        </div>
+      </div>
 
-            <div class="mt-6 grid sm:grid-cols-3 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="text-xs text-white/55">Pack A</div>
-                <div class="mt-1 font-semibold text-white">1000+ Universe Space Content Reels</div>
-                <div class="mt-2 text-sm text-white/70">Curiosity hooks & aesthetic loops</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="text-xs text-white/55">Pack B</div>
-                <div class="mt-1 font-semibold text-white">2200+ Gym Fitness Reels</div>
-                <div class="mt-2 text-sm text-white/70">Motivation, workouts, transformation edits</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="text-xs text-white/55">Pack C</div>
-                <div class="mt-1 font-semibold text-white">1000+ Nature HD Reels</div>
-                <div class="mt-2 text-sm text-white/70">Cinematic calm content & travel vibes</div>
-              </div>
-            </div>
+      <div class="mt-7 grid lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+        <div class="reveal lg:col-span-2">
+          <div class="card rounded-3xl p-5 sm:p-7 glass2 ringGlow relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none" style="background:
+              radial-gradient(900px 320px at 20% 20%, rgba(255,0,53,.18), transparent 55%),
+              radial-gradient(600px 260px at 85% 25%, rgba(255,46,85,.12), transparent 60%);
+              opacity:.9;"></div>
 
-            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-              <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="Top Seller Combo (Universe + Gym + Nature)">
-                Buy Top Seller Combo
-              </button>
-              <a href="#bundles" class="btn-outline rounded-2xl px-5 py-3 text-sm font-semibold text-white/85 text-center transition">
-                Compare Bundles
-              </a>
+            <div class="relative">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div>
+                  <div class="inline-flex items-center gap-2 chip rounded-full px-3 py-1.5 text-xs font-semibold text-white/85">
+                    <span class="h-2 w-2 rounded-full bg-[rgba(255,0,53,.95)]"></span>
+                    Premium bundle highlight
+                  </div>
+                  <h3 class="mt-3 text-xl sm:text-2xl font-black tracking-tight text-white">
+                    9000+ Art & Craft Reels
+                  </h3>
+                  <p class="mt-2 muted leading-relaxed">
+                    Satisfying, visually engaging reels that keep viewers watching. Great for consistent daily posting and strong audience retention.
+                  </p>
+                </div>
+
+                <div class="card rounded-2xl p-4 min-w-[220px]">
+                  <div class="text-xs muted2">Includes</div>
+                  <div class="mt-2 grid gap-2">
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-white/90">Quantity</span>
+                      <span class="font-extrabold">9000+</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-white/90">Watermark</span>
+                      <span class="font-extrabold">No</span>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-white/90">Editing</span>
+                      <span class="font-extrabold">Not needed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 flex flex-col sm:flex-row gap-3">
+                <button class="btn rounded-2xl px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="top">
+                  Buy Top Seller on WhatsApp
+                </button>
+                <a class="btnGhost rounded-2xl px-5 py-3 text-sm font-semibold text-white/90 text-center" href="#testimonials">
+                  See reviews
+                </a>
+              </div>
+
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+                <div class="card rounded-2xl p-3">
+                  <div class="text-xs muted2">Best for</div>
+                  <div class="text-sm font-extrabold mt-1">Engagement</div>
+                </div>
+                <div class="card rounded-2xl p-3">
+                  <div class="text-xs muted2">Post speed</div>
+                  <div class="text-sm font-extrabold mt-1">Instant</div>
+                </div>
+                <div class="card rounded-2xl p-3">
+                  <div class="text-xs muted2">Style</div>
+                  <div class="text-sm font-extrabold mt-1">Satisfying</div>
+                </div>
+                <div class="card rounded-2xl p-3">
+                  <div class="text-xs muted2">Ideal for</div>
+                  <div class="text-sm font-extrabold mt-1">Creator pages</div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <aside class="card reveal rounded-3xl p-6 sm:p-8 lg:w-[380px]">
-            <h3 class="text-lg font-semibold text-white">Mini Growth Plan</h3>
-            <p class="mt-2 text-sm text-white/70">A simple weekly posting strategy for consistent momentum.</p>
-
-            <div class="mt-5 space-y-3">
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="flex items-center justify-between">
-                  <div class="font-semibold text-white">Mon–Wed</div>
-                  <div class="text-xs text-white/60">Universe</div>
-                </div>
-                <div class="mt-1 text-sm text-white/70">Curiosity hook reels + short captions.</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="flex items-center justify-between">
-                  <div class="font-semibold text-white">Thu–Fri</div>
-                  <div class="text-xs text-white/60">Gym</div>
-                </div>
-                <div class="mt-1 text-sm text-white/70">Motivation + strong CTA.</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/4 p-4">
-                <div class="flex items-center justify-between">
-                  <div class="font-semibold text-white">Weekend</div>
-                  <div class="text-xs text-white/60">Nature</div>
-                </div>
-                <div class="mt-1 text-sm text-white/70">Calm aesthetic posts to boost saves.</div>
-              </div>
+        <div class="reveal">
+          <div class="card rounded-3xl p-5 sm:p-6">
+            <div class="text-sm font-semibold muted">Popular picks</div>
+            <div class="mt-3 grid gap-3" id="popularList"></div>
+            <div class="mt-4">
+              <button class="btn rounded-2xl w-full px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="popular">
+                Ask for best deal
+              </button>
+              <div class="mt-2 text-xs muted2 text-center">We’ll recommend the best bundle for your niche</div>
             </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="reveal">
-          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Testimonial</h2>
-          <p class="mt-2 text-white/65 max-w-2xl">Real outcomes happen when consistency gets easy.</p>
+    <section id="testimonials" class="anchor mx-auto containerX px-4 sm:px-6 pb-12 sm:pb-14">
+      <div class="reveal">
+        <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Testimonials</h2>
+        <p class="mt-2 muted">Real feedback from creators who post consistently with our bundles.</p>
+      </div>
+
+      <div class="mt-7 grid md:grid-cols-3 gap-4 sm:gap-5">
+        <div class="reveal card rounded-3xl p-5">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">A</div>
+            <div>
+              <div class="font-extrabold">Aarav</div>
+              <div class="text-xs muted2">Instagram theme page</div>
+            </div>
+          </div>
+          <p class="mt-4 muted leading-relaxed">“Very clean reels and easy to post. The bundle saved me hours every week.”</p>
+          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
         </div>
 
-        <div class="mt-8 grid md:grid-cols-3 gap-5">
-          <figure class="card reveal rounded-3xl p-6">
-            <div class="flex items-center gap-3">
-              <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10"></div>
-              <div>
-                <div class="font-semibold text-white">Theme Page Owner</div>
-                <div class="text-xs text-white/55">Universe niche</div>
-              </div>
+        <div class="reveal card rounded-3xl p-5">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">S</div>
+            <div>
+              <div class="font-extrabold">Sana</div>
+              <div class="text-xs muted2">Fitness content creator</div>
             </div>
-            <blockquote class="mt-4 text-sm text-white/75 leading-relaxed">
-              “Saved me hours. I just pick a reel, post, and keep the aesthetic consistent. Engagement improved.”
-            </blockquote>
-            <div class="mt-4 text-xs text-white/55">— Verified buyer</div>
-          </figure>
+          </div>
+          <p class="mt-4 muted leading-relaxed">“Gym reels are perfect and without watermark. Posting became super consistent.”</p>
+          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
+        </div>
 
-          <figure class="card reveal rounded-3xl p-6">
-            <div class="flex items-center gap-3">
-              <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10"></div>
-              <div>
-                <div class="font-semibold text-white">Fitness Coach</div>
-                <div class="text-xs text-white/55">Gym niche</div>
-              </div>
+        <div class="reveal card rounded-3xl p-5">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-2xl bg-white/5 border border-white/10 grid place-items-center font-black">R</div>
+            <div>
+              <div class="font-extrabold">Rohit</div>
+              <div class="text-xs muted2">Business page manager</div>
             </div>
-            <blockquote class="mt-4 text-sm text-white/75 leading-relaxed">
-              “The gym reels hit hard. My watch-time went up and posting daily feels effortless now.”
-            </blockquote>
-            <div class="mt-4 text-xs text-white/55">— Verified buyer</div>
-          </figure>
-
-          <figure class="card reveal rounded-3xl p-6">
-            <div class="flex items-center gap-3">
-              <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-red-600/30 to-black/50 border border-white/10"></div>
-              <div>
-                <div class="font-semibold text-white">Agency Editor</div>
-                <div class="text-xs text-white/55">Multiple niches</div>
-              </div>
-            </div>
-            <blockquote class="mt-4 text-sm text-white/75 leading-relaxed">
-              “Clean organization and quick support. Perfect when clients need consistent reels fast.”
-            </blockquote>
-            <div class="mt-4 text-xs text-white/55">— Verified buyer</div>
-          </figure>
+          </div>
+          <p class="mt-4 muted leading-relaxed">“Fast WhatsApp support and delivery. Great value for bulk reels.”</p>
+          <div class="mt-4 text-xs muted2">Rating: 5/5</div>
         </div>
       </div>
     </section>
 
     <!-- Buy -->
-    <section id="buy" class="py-14 sm:py-16">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="card reveal rounded-3xl p-6 sm:p-10">
-          <div class="grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-7">
-              <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Buy on WhatsApp</h2>
-              <p class="mt-2 text-white/70 max-w-2xl">
-                Tap a button and you’ll be redirected to WhatsApp with a pre-filled message for the selected product.
-              </p>
+    <section id="buy" class="anchor mx-auto containerX px-4 sm:px-6 pb-14 sm:pb-16">
+      <div class="reveal card rounded-3xl p-5 sm:p-7 glass2 ringGlow relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none" style="background:
+          radial-gradient(900px 320px at 15% 10%, rgba(255,0,53,.22), transparent 58%),
+          radial-gradient(700px 280px at 90% 20%, rgba(255,46,85,.15), transparent 60%);
+          opacity:.95;"></div>
 
-              <div class="mt-6 grid sm:grid-cols-2 gap-3">
-                <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="1000+ Universe Space Content Reels">
-                  Buy: Universe Space
-                </button>
-                <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="1000+ Nature HD Reels">
-                  Buy: Nature HD
-                </button>
-                <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="2200+ Gym Fitness Reels">
-                  Buy: Gym Fitness
-                </button>
-                <button class="btn rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="9000+ Art & Craft Reels">
-                  Buy: Art & Craft
-                </button>
-              </div>
+        <div class="relative grid lg:grid-cols-3 gap-6 items-start">
+          <div class="lg:col-span-2">
+            <h2 class="sectionTitle text-2xl sm:text-3xl font-black tracking-tight">Buy on WhatsApp</h2>
+            <p class="mt-2 muted leading-relaxed">
+              Click a button below to open WhatsApp with a ready message. We’ll confirm bundle details and delivery.
+            </p>
 
-              <div class="mt-6 rounded-2xl border border-white/10 bg-white/4 p-4 text-sm text-white/70">
-                WhatsApp Number: <span class="text-white font-semibold">+8433415139</span>
-              </div>
+            <div class="mt-5 grid sm:grid-cols-2 gap-3" id="buyButtons"></div>
+
+            <div class="mt-5 text-xs muted2">
+              WhatsApp Number: <span class="text-white/90 font-semibold">+8433415139</span>
             </div>
+          </div>
 
-            <div class="lg:col-span-5">
-              <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/6 to-white/3 p-6">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <div class="text-xs text-white/55">Fast checkout</div>
-                    <div class="text-lg font-semibold text-white">One-click WhatsApp order</div>
-                  </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/75">Secure</div>
-                </div>
-                <div class="mt-5 space-y-3 text-sm text-white/70">
-                  <div class="flex gap-2"><span class="text-red-400">•</span> Choose a bundle</div>
-                  <div class="flex gap-2"><span class="text-red-400">•</span> Send the pre-filled message</div>
-                  <div class="flex gap-2"><span class="text-red-400">•</span> Get delivery details instantly</div>
-                </div>
+          <div class="card rounded-2xl p-5">
+            <div class="text-sm font-semibold muted">Quick note</div>
+            <div class="mt-2 text-sm text-white/90 font-extrabold">All bundles:</div>
+            <ul class="mt-3 grid gap-2 text-sm muted">
+              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Ready to post (no editing)</li>
+              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> No watermark</li>
+              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Mobile-friendly delivery flow</li>
+              <li class="flex gap-2"><span class="text-[rgba(255,0,53,.95)] font-black">•</span> Fast response on WhatsApp</li>
+            </ul>
 
-                <div class="mt-6">
-                  <button id="buyPrimary" class="btn w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white transition" data-buy="Top Seller Combo (Universe + Gym + Nature)">
-                    Buy Top Seller Combo Now
-                  </button>
-                </div>
-
-                <div class="mt-4 text-xs text-white/55">
-                  If WhatsApp doesn’t open, ensure you’re on mobile or have WhatsApp Desktop installed.
-                </div>
-              </div>
-            </div>
+            <button class="mt-5 btn rounded-2xl w-full px-5 py-3 text-sm font-bold text-white shine" data-whatsapp="support">
+              Contact Support
+            </button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/10">
+      <div class="mx-auto containerX px-4 sm:px-6 py-10">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-2xl ringGlow grid place-items-center bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,.22),rgba(255,0,53,.55)_45%,rgba(0,0,0,.25)_90%)]">
+                <span class="text-white font-black tracking-tight">VR</span>
+              </div>
+              <div>
+                <div class="font-extrabold text-white">Viral Reel Bundle</div>
+                <div class="text-xs muted2">Black & Red • Modern • Fast</div>
+              </div>
+            </div>
+            <p class="mt-4 text-sm muted leading-relaxed">
+              Ready-to-post niche reels for creators and businesses. Contact us for more reel bundle options and deals.
+            </p>
+          </div>
+
+          <div>
+            <div class="font-extrabold text-white">Sections</div>
+            <div class="mt-3 grid gap-2 text-sm">
+              <a class="muted hover:text-white transition" href="#bundles">Bundles</a>
+              <a class="muted hover:text-white transition" href="#about">About Product</a>
+              <a class="muted hover:text-white transition" href="#top">Top Seller</a>
+              <a class="muted hover:text-white transition" href="#testimonials">Testimonials</a>
+              <a class="muted hover:text-white transition" href="#buy">Buy</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-extrabold text-white">Contact</div>
+            <div class="mt-3 text-sm muted">WhatsApp: <span class="text-white/90 font-semibold">+8433415139</span></div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn rounded-2xl px-4 py-2 text-sm font-bold text-white shine" data-whatsapp="footer">
+                WhatsApp Now
+              </button>
+              <a class="btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" href="#home">
+                Back to top
+              </a>
+            </div>
+            <div class="mt-4 text-xs muted2">© <span id="year"></span> Viral Reel Bundle. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <!-- Footer -->
-  <footer class="py-10 border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
-          <div class="flex items-center gap-2">
-            <div class="h-9 w-9 rounded-xl ring-red bg-gradient-to-br from-red-600/35 to-black/40 border border-white/10 flex items-center justify-center">
-              <span class="text-white font-semibold">VR</span>
-            </div>
-            <div class="font-semibold text-white">Viral Reel Bundle</div>
-          </div>
-          <div class="mt-2 text-sm text-white/60 max-w-xl">
-            Premium reel bundles in a black & red aesthetic. Built for consistency, retention, and growth.
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <a class="btn-outline rounded-xl px-4 py-2 text-sm text-white/80 hover:text-white transition" href="#home">Home</a>
-          <a class="btn-outline rounded-xl px-4 py-2 text-sm text-white/80 hover:text-white transition" href="#bundles">Bundle</a>
-          <a class="btn-outline rounded-xl px-4 py-2 text-sm text-white/80 hover:text-white transition" href="#about">About Product</a>
-          <a class="btn-outline rounded-xl px-4 py-2 text-sm text-white/80 hover:text-white transition" href="#top-seller">Top Seller</a>
-          <a class="btn-outline rounded-xl px-4 py-2 text-sm text-white/80 hover:text-white transition" href="#testimonials">Testimonial</a>
-          <a class="btn rounded-xl px-4 py-2 text-sm font-semibold text-white transition" href="#buy">Buy</a>
-        </div>
-      </div>
-
-      <div class="divider my-8"></div>
-
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/55">
-        <div>© <span id="year"></span> Viral Reel Bundle. All rights reserved.</div>
-        <div class="flex items-center gap-2">
-          <span class="inline-block h-2 w-2 rounded-full bg-red-500"></span>
-          <span>WhatsApp Orders: +8433415139</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 z-[60] hidden">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative mx-auto max-w-xl px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
-      <div class="card rounded-3xl w-full p-5 sm:p-6">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <div class="text-xs text-white/55">Preview</div>
-            <div id="modalTitle" class="text-lg font-semibold text-white mt-1">Preview</div>
-          </div>
-          <button id="closeModal" class="btn-outline rounded-xl px-3 py-2 text-sm text-white/85">Close</button>
-        </div>
-
-        <div class="mt-4 rounded-2xl border border-white/10 bg-gradient-to-br from-red-600/15 via-white/5 to-black/30 p-5 overflow-hidden relative">
-          <div class="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-red-500/15 blur-2xl"></div>
-          <div class="absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-red-500/10 blur-2xl"></div>
-
-          <div class="text-sm text-white/75 leading-relaxed">
-            This is a lightweight visual preview card. Your bundle will include organized reels in the selected niche.
-          </div>
-
-          <div class="mt-4 grid grid-cols-3 gap-3">
-            <div class="aspect-[9/16] rounded-2xl border border-white/10 bg-white/5 relative overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
-              <div class="absolute bottom-2 left-2 text-[10px] text-white/70">Clip 01</div>
-            </div>
-            <div class="aspect-[9/16] rounded-2xl border border-white/10 bg-white/5 relative overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
-              <div class="absolute bottom-2 left-2 text-[10px] text-white/70">Clip 02</div>
-            </div>
-            <div class="aspect-[9/16] rounded-2xl border border-white/10 bg-white/5 relative overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
-              <div class="absolute bottom-2 left-2 text-[10px] text-white/70">Clip 03</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-5 flex flex-col sm:flex-row gap-3">
-          <button id="modalBuy" class="btn w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white transition">Buy this on WhatsApp</button>
-          <button id="copyMsg" class="btn-outline w-full rounded-2xl px-5 py-3 text-sm font-semibold text-white/85 transition">Copy Message</button>
-        </div>
-
-        <div id="copyToast" class="mt-3 hidden text-xs text-white/70">Message copied.</div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    const PHONE = "8433415139"; // WhatsApp expects digits without '+'
-    const BRAND = "Viral Reel Bundle";
+    const PHONE = "8433415139";
 
-    const defaultMsg = (product) =>
-`Hello ${BRAND}! I want to buy: ${product}
-Please share price, delivery details, and payment method.`;
+    const allTopics = [
+      "1000+ Universe Space Content Reels",
+      "1000+ Nature HD Reels",
+      "2200+ Gym Fitness Reels",
+      "9000+ Art & Craft Reels",
+      "9000+ Art & Craft Reels 1",
+      "9000+ Art & Craft Reels 2",
+      "9000+ Art & Craft Reels 3",
+      "9000+ Art & Craft Reels 4",
+      "9000+ Art & Craft Reels 5",
+      "9000+ Art & Craft Reels 6",
+      "1000+ Universe Space Content Reels",
+      "1000+ Nature HD Reels",
+      "2200+ Gym Fitness Reels"
+    ];
 
-    function openWhatsApp(product){
-      const text = defaultMsg(product);
-      const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
+    // Show 6 bundle packages in bundle section (as requested)
+    const bundlePackages = [
+      { title: "1000+ Universe Space Content Reels", tag: "Space", count: "1000+" },
+      { title: "1000+ Nature HD Reels", tag: "Nature", count: "1000+" },
+      { title: "2200+ Gym Fitness Reels", tag: "Fitness", count: "2200+" },
+      { title: "9000+ Art & Craft Reels", tag: "Art & Craft", count: "9000+" },
+      { title: "9000+ Art & Craft Reels 1", tag: "Art & Craft", count: "9000+" },
+      { title: "9000+ Art & Craft Reels 2", tag: "Art & Craft", count: "9000+" },
+    ];
+
+    const popularPicks = [
+      "9000+ Art & Craft Reels 3",
+      "9000+ Art & Craft Reels 4",
+      "9000+ Art & Craft Reels 5",
+      "9000+ Art & Craft Reels 6"
+    ];
+
+    function waLink(message){
+      const base = "https://wa.me/" + PHONE;
+      return base + "?text=" + encodeURIComponent(message);
     }
 
-    // Bind buy buttons
-    document.querySelectorAll("[data-buy]").forEach(btn=>{
-      btn.addEventListener("click", ()=> openWhatsApp(btn.getAttribute("data-buy")));
-    });
+    function buildMessage(topic){
+      return `Hi Viral Reel Bundle! I want to buy: ${topic}. Please share price, delivery details, and how to receive the reels. (Ready-to-post, no watermark)`;
+    }
 
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    function buildGeneralMessage(context){
+      return `Hi Viral Reel Bundle! I’m interested in your Reel Bundles (ready-to-post, no watermark). Please share available packages, prices, and best deal. Context: ${context}.`;
+    }
+
+    // Populate bundles
+    const bundleGrid = document.getElementById('bundleGrid');
+    const buyButtons = document.getElementById('buyButtons');
+    const popularList = document.getElementById('popularList');
+
+    function iconFor(tag){
+      const map = {
+        "Space": "✦",
+        "Nature": "⟡",
+        "Fitness": "⚡",
+        "Art & Craft": "◇"
+      };
+      return map[tag] || "◆";
+    }
+
+    function gradientFor(tag){
+      const map = {
+        "Space": "radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), rgba(255,0,53,.55) 42%, rgba(0,0,0,.25) 90%)",
+        "Nature": "radial-gradient(circle at 28% 28%, rgba(255,255,255,.18), rgba(255,46,85,.45) 40%, rgba(0,0,0,.28) 90%)",
+        "Fitness": "radial-gradient(circle at 30% 35%, rgba(255,255,255,.14), rgba(255,0,53,.65) 40%, rgba(0,0,0,.25) 90%)",
+        "Art & Craft": "radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,0,53,.55) 45%, rgba(0,0,0,.26) 90%)"
+      };
+      return map[tag] || map["Space"];
+    }
+
+    function bundleCardHTML(b){
+      const msg = buildMessage(b.title);
+      return `
+        <article class="reveal card rounded-3xl p-5 sm:p-6 hover:translate-y-[-2px] transition will-change-transform">
+          <div class="flex items-start justify-between gap-3">
+            <div class="h-11 w-11 rounded-2xl border border-white/10 grid place-items-center ringGlow" style="background:${gradientFor(b.tag)}">
+              <span class="text-white font-black">${iconFor(b.tag)}</span>
+            </div>
+            <div class="badge rounded-full px-3 py-1.5 text-xs font-bold text-white/90">${b.count}</div>
+          </div>
+          <h3 class="mt-4 text-base sm:text-lg font-black tracking-tight">${b.title}</h3>
+          <p class="mt-2 text-sm muted leading-relaxed">Ready to post • No watermark • No editing required.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <button class="btn rounded-2xl px-4 py-2 text-sm font-bold text-white shine" data-topic="${encodeURIComponent(b.title)}">
+              Buy on WhatsApp
+            </button>
+            <button class="btnGhost rounded-2xl px-4 py-2 text-sm font-semibold text-white/90" data-copy="${encodeURIComponent(b.title)}">
+              Copy name
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    bundleGrid.innerHTML = bundlePackages.map(bundleCardHTML).join('');
+
+    // Populate buy buttons with ALL topics (as requested list)
+    function buyBtnHTML(topic){
+      return `
+        <button class="reveal btnGhost rounded-2xl px-4 py-3 text-left hover:border-[rgba(255,0,53,.35)] transition"
+          data-topic="${encodeURIComponent(topic)}">
+          <div class="text-sm font-extrabold text-white">${topic}</div>
+          <div class="text-xs muted2 mt-1">Tap to open WhatsApp with message</div>
+        </button>
+      `;
+    }
+    buyButtons.innerHTML = allTopics.map(buyBtnHTML).join('');
+
+    // Popular picks
+    popularList.innerHTML = popularPicks.map(t => `
+      <button class="btnGhost rounded-2xl px-4 py-3 text-left hover:border-[rgba(255,0,53,.35)] transition" data-topic="${encodeURIComponent(t)}">
+        <div class="text-sm font-extrabold text-white">${t}</div>
+        <div class="text-xs muted2 mt-1">Open WhatsApp message</div>
+      </button>
+    `).join('');
+
+    // Marquee
+    const marqueeTrack = document.getElementById('marqueeTrack');
+    const chips = [
+      "Ready to Post",
+      "No Watermark",
+      "Fast Support",
+      "Mobile Friendly",
+      "Black & Red Theme",
+      "Instant Upload",
+      "Creator Packs",
+      "Business Pages",
+      "HD Reels",
+      "Niche Bundles"
+    ];
+    const makeChip = (t)=> `
+      <div class="chip rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-white/85 whitespace-nowrap">
+        <span class="text-[rgba(255,0,53,.95)] font-black">•</span> ${t}
+      </div>`;
+    const row = chips.map(makeChip).join('');
+    marqueeTrack.innerHTML = row + row; // duplicate for seamless
+
+    // WhatsApp click handlers
+    function openWhatsAppWithTopic(topic){
+      const msg = buildMessage(topic);
+      window.location.href = waLink(msg);
+    }
+    function openWhatsAppGeneral(context){
+      const msg = buildGeneralMessage(context);
+      window.location.href = waLink(msg);
+    }
+
+    document.addEventListener('click', (e) => {
+      const topicEl = e.target.closest('[data-topic]');
+      if (topicEl){
+        const topic = decodeURIComponent(topicEl.getAttribute('data-topic'));
+        openWhatsAppWithTopic(topic);
+        return;
+      }
+      const waEl = e.target.closest('[data-whatsapp]');
+      if (waEl){
+        const ctx = waEl.getAttribute('data-whatsapp') || "general";
+        let textCtx = "General inquiry";
+        if (ctx === "more") textCtx = "More reel bundles / custom deal";
+        if (ctx === "top") textCtx = "Top seller: 9000+ Art & Craft Reels";
+        if (ctx === "popular") textCtx = "Popular picks recommendation";
+        if (ctx === "support") textCtx = "Support / delivery questions";
+        if (ctx === "footer") textCtx = "Footer contact";
+        if (ctx === "general") textCtx = "Product information";
+        openWhatsAppGeneral(textCtx);
+        return;
+      }
+      const copyEl = e.target.closest('[data-copy]');
+      if (copyEl){
+        const text = decodeURIComponent(copyEl.getAttribute('data-copy'));
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(()=> {
+            copyEl.textContent = "Copied";
+            setTimeout(()=> copyEl.textContent = "Copy name", 1200);
+          }).catch(()=>{});
+        }
+      }
+    });
 
     // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn?.addEventListener("click", ()=>{
-      mobileMenu.classList.toggle("hidden");
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileBtn.textContent = mobileMenu.classList.contains('hidden') ? "Menu" : "Close";
     });
-    mobileMenu.querySelectorAll("a").forEach(a=>{
-      a.addEventListener("click", ()=> mobileMenu.classList.add("hidden"));
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileBtn.textContent = "Menu";
+      });
     });
 
     // Reveal on scroll
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add("show");
-          observer.unobserve(e.target);
-        }
+    const revealEls = Array.from(document.querySelectorAll('.reveal'));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('show');
       });
-    }, {threshold:.12});
-    document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    }, {threshold: 0.12});
+    revealEls.forEach(el => io.observe(el));
 
-    // Pulse effect (moving element)
-    let pulsing = false;
-    function togglePulse(){
-      pulsing = !pulsing;
-      document.body.style.transition = "background 800ms ease";
-      if(pulsing){
-        document.body.style.background =
-          `radial-gradient(900px 500px at 12% 0%, rgba(255,0,51,.28), transparent 55%),
-           radial-gradient(900px 500px at 90% 10%, rgba(255,43,43,.20), transparent 60%),
-           radial-gradient(700px 400px at 50% 95%, rgba(255,0,51,.14), transparent 55%),
-           linear-gradient(180deg, var(--bg), var(--bg2))`;
-      }else{
-        document.body.style.background =
-          `radial-gradient(900px 500px at 10% 0%, rgba(255,0,51,.22), transparent 55%),
-           radial-gradient(900px 500px at 90% 10%, rgba(255,43,43,.16), transparent 60%),
-           radial-gradient(700px 400px at 50% 95%, rgba(255,0,51,.12), transparent 55%),
-           linear-gradient(180deg, var(--bg), var(--bg2))`;
-      }
-    }
-    document.getElementById("themePulse")?.addEventListener("click", togglePulse);
-    document.getElementById("mobilePulse")?.addEventListener("click", ()=>{ togglePulse(); mobileMenu.classList.add("hidden"); });
-
-    // Quick selector pills
-    const selectedNicheEl = document.getElementById("selectedNiche");
-    const buySelectedBtn = document.getElementById("buySelected");
-    const pills = document.querySelectorAll("#nichePills .pill");
-    let selected = selectedNicheEl.textContent.trim();
-
-    function setSelected(niche){
-      selected = niche;
-      selectedNicheEl.textContent = niche;
-      pills.forEach(p=>p.classList.remove("active-pill"));
-      pills.forEach(p=>{
-        if(p.getAttribute("data-niche") === niche) p.classList.add("active-pill");
-      });
-      buySelectedBtn.setAttribute("data-buy", niche);
-    }
-    setSelected(selected);
-
-    pills.forEach(p=>{
-      p.addEventListener("click", ()=>{
-        setSelected(p.getAttribute("data-niche"));
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id.length < 2) return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior: 'smooth', block: 'start'});
       });
     });
-    buySelectedBtn.addEventListener("click", ()=> openWhatsApp(selected));
 
-    // Shuffle bundles (small interactive motion)
-    function shuffleGrid(){
-      const grid = document.querySelector("#bundles .grid");
-      if(!grid) return;
-      const items = Array.from(grid.children);
-      for(let i=items.length-1;i>0;i--){
-        const j = Math.floor(Math.random()*(i+1));
-        [items[i], items[j]] = [items[j], items[i]];
-      }
-      items.forEach((el, idx)=>{
-        el.style.transition = "transform 220ms ease, opacity 220ms ease";
-        el.style.transform = "translateY(-6px)";
-        el.style.opacity = ".75";
-        setTimeout(()=>{
-          grid.appendChild(el);
-          el.style.transform = "translateY(0)";
-          el.style.opacity = "1";
-        }, 60 + idx*10);
-      });
-    }
-    document.getElementById("shuffleBtn")?.addEventListener("click", shuffleGrid);
-    document.getElementById("shuffleBtnMobile")?.addEventListener("click", shuffleGrid);
-
-    // Preview modal
-    const modal = document.getElementById("modal");
-    const modalTitle = document.getElementById("modalTitle");
-    const closeModal = document.getElementById("closeModal");
-    const modalBuy = document.getElementById("modalBuy");
-    const copyMsg = document.getElementById("copyMsg");
-    const copyToast = document.getElementById("copyToast");
-    let modalProduct = "Bundle";
-
-    function openModal(product){
-      modalProduct = product;
-      modalTitle.textContent = product;
-      modal.classList.remove("hidden");
-      document.body.style.overflow = "hidden";
-      copyToast.classList.add("hidden");
-    }
-    function hideModal(){
-      modal.classList.add("hidden");
-      document.body.style.overflow = "";
-    }
-
-    document.querySelectorAll("[data-preview]").forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const card = btn.closest("article");
-        const product = card?.querySelector("h3")?.textContent?.trim() || "Bundle Preview";
-        openModal(product);
-      });
-    });
-    closeModal.addEventListener("click", hideModal);
-    modal.addEventListener("click", (e)=>{
-      if(e.target === modal.firstElementChild) hideModal();
-    });
-    window.addEventListener("keydown", (e)=>{
-      if(e.key === "Escape" && !modal.classList.contains("hidden")) hideModal();
-    });
-    modalBuy.addEventListener("click", ()=> openWhatsApp(modalProduct));
-    copyMsg.addEventListener("click", async ()=>{
-      const text = defaultMsg(modalProduct);
-      try{
-        await navigator.clipboard.writeText(text);
-        copyToast.classList.remove("hidden");
-        setTimeout(()=>copyToast.classList.add("hidden"), 1600);
-      }catch(e){
-        copyToast.textContent = "Copy not supported in this browser.";
-        copyToast.classList.remove("hidden");
-      }
-    });
-
-    // Sticky header subtle shadow on scroll
-    const header = document.getElementById("header");
-    window.addEventListener("scroll", ()=>{
-      const y = window.scrollY || 0;
-      header.style.transform = y > 8 ? "translateY(0)" : "translateY(0)";
-      header.style.filter = y > 8 ? "drop-shadow(0 18px 35px rgba(0,0,0,.32))" : "none";
-    }, {passive:true});
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
